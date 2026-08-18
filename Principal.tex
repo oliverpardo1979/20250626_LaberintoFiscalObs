@@ -1,0 +1,352 @@
+%%%%%%%%%%%%%%%%% Estilo general del Libro %%%%%%%%%%%%%%%%%
+\documentclass[12pt]{wileySev20250618}
+%\documentclass{book}
+
+%%%%%%%%%%%%%%%%% Algunos paquetes especiales %%%%%%%%%%%%%%%%%
+%\usepackage[spanish]{babel}
+%\usepackage[main=spanish,locale=US]{babel}
+\usepackage[main=spanish]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker = {.}}
+\usepackage{pgf-pie}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{caption}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\unaccentedoperators
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{tikz}
+\usepackage{pgfplots}
+    %\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning} 
+\usepackage{pgfplotstable}
+\usetikzlibrary{patterns, arrows.meta}
+\usepgfplotslibrary{dateplot}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{threeparttablex}
+\usepackage{rotating}
+\usepackage{fontsize}
+  \changefontsize[13.8pt]{12pt}
+\usepackage{gensymb}
+\usepackage{cancel}
+\usepackage{multicol}
+\usepackage{tabulary}
+\usepackage{nccmath}
+\usepackage{chemfig}
+%\usepackage[hyphens]{url}
+\usepackage{float}
+\usepackage[
+  labelfont=bf,
+  singlelinecheck=false,
+  indention=2.4cm,
+  format=plain,
+  parindent=1em,
+  justification=centering
+]{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{array,ragged2e, tabularx}
+\usepackage{tcolorbox}
+\usepackage[export]{adjustbox}
+\usepackage{microtype}
+\usepackage{wasysym}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{lscape}
+\usetikzlibrary{mindmap}
+\usepackage{enumerate} 
+\usepackage{enumitem} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{multirow}    % Para usar \multirow en tablas
+\usepackage{booktabs}    % (Opcional) Mejora el diseño de tablas
+\usepackage{array}       % Permite más control sobre el formato de columnas
+\usepackage{caption}     % Mejora el control del formato de los títulos
+%\usepackage[table]{xcolor} % (Opcional) Para colorear celdas o filas, si lo necesitas
+\usepackage{etoolbox}
+\usepackage{marvosym}
+\usepackage[section]{placeins}
+\usepackage{calc} 
+\usepackage{newfloat}
+\usepackage{lipsum}  
+\usepackage{xcolor}  
+\newcolumntype{P}[1]{>{\raggedRight}p{#1}}
+\usepackage[style=authoryear, citestyle=authoryear]{biblatex}
+\DeclareDelimFormat[nameyeardelim]{nameyeardelim}{\addspace} % Elimina la coma
+%\usepackage{pgf-pie} % Para gráficos de torta
+%\usepackage{graphicx}
+%\usepackage{enumitem}
+%\newlist{tightlist}{enumerate}{1}
+%\setlist[tightlist]{label=\arabic*., nosep, leftmargin=*, before={\vspace{-\baselineskip}}, after={\vspace{-\baselineskip}}}
+\usepackage[acronym,nonumberlist,toc]{glossaries}
+\makeglossaries
+\usepackage{pdfpages}
+
+
+
+%%%%%%%%%%%%%%%%%% Bibliografía %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Estilo de la bibliografía. Puede cambiarlo al estilo IEEE colocando style=ieee
+%\usepackage[style=apa]{biblatex}
+
+%El archivo bibliografia.bib contiene las entradas de la bibliografia
+\addbibresource{bibliografia.bib}
+
+%%%%%%%%%%%%%%%%% Configuraciones especiales %%%%%%%%%%%%%%%%%
+
+\renewcommand\spanishtablename{Tabla}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{shadings,shadows}
+\newenvironment{problem}[1]{%
+    \tcolorbox[beamer,%
+    noparskip,%breakable,
+%     colback=LightBlue,colframe=DarkBlue,%
+%     colbacklower=DarkBlue!75!LightBlue,%
+    title=#1]}%
+    {\endtcolorbox}
+%%%%%%%%%%%%%%%%%
+
+\addto\captionsspanish{% Reemplaza ''inglés'' con el idioma que usas
+  \renewcommand{\contentsname}%
+    {ÍNDICE GENERAL}%
+}
+%%%%%%%%%%%%%%%%%
+\definecolor{azul}{rgb}{0.07, 0.04, 0.56}
+
+%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline} 
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+
+%%%%%%%%%%%%%%%%%
+\apptocmd{\lim}{\limits}{}{}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newenvironment{whereparam*}
+  {\par\vspace{\abovedisplayskip}\noindent
+   \tabularx{\columnwidth}{>{$}l<{$} @{${}={}$} >{\raggedright\arraybackslash}X}}
+  {\endtabularx\par\vspace{\belowdisplayskip}}
+\addto\captionsspanish{\renewcommand{\chaptername}{Capítulo}}
+
+%%%%%%%%%%%%%%%%% Para texto PostScript
+\usepackage{w-bookps}
+
+
+%%%%%%%%%%%%%%%%%
+\def\helveticabold{cmssbx10}
+
+%%%%%%%%%%%%%%%%%
+\newcommand{\VT}[1]{\ensuremath{{V_{T#1}}}}
+
+%%%%%%%%%%%%%%%%% Use un cuadro para expandir la macro antes de colocar el encabezado de la sección
+\newbox\sectsavebox
+\setbox\sectsavebox=\hbox{\boldmath\VT{xyz}}
+
+%%%%%%%%%%%%%%%%%
+\newbox\sectsavebox
+\setbox\sectsavebox=\hbox{\boldmath\VT{xyz}}
+
+%%%%%%%%%%%%%%%%%      INICIO DEL LIBRO     
+\begin{document}
+
+%\includepdf[
+%  pages=1,
+%  offset=0cm 0cm,  % mueve hacia arriba 1 cm
+%  scale=1.0         % ajusta el tamaño si es necesario
+%]{Cover.pdf}
+
+
+
+% Página de nota institucional del autor
+%\clearpage
+%\null
+%\vfill
+%\thispagestyle{empty}
+%\begin{center}
+%    {\Large \textbf{Nota del autor}}
+
+%    \vspace{1cm}
+
+%    Este documento circula de forma digital con el objetivo de aportar a la discusión pública sobre la situación fiscal del país.
+
+%    La versión aquí presentada está en proceso de edición para su futura publicación impresa. Comentarios, correcciones y sugerencias son bienvenidos y pueden enviarse a \href{mailto:pardoo@javeriana.edu.co}{pardoo@javeriana.edu.co}.
+
+%    \vspace{1cm}
+
+%    \textit{Oliver Pardo}
+    
+%    Bogotá, junio de 2025
+%\end{center}
+%\vfill
+%\clearpage
+
+
+
+\sloppy 
+\decimalpoint
+%\nocite{*}
+\setlength\tabcolsep{3pt}
+%\newpage\null\thispagestyle{empty}\newpage
+%\newpage\null\thispagestyle{empty}\newpage
+
+%%%%%%%%%%%%% Titulo del libro: Primera carátula %%%%%%%%%%%%%%%%%%
+%\booktitle{La Crisis Fiscal en la Colombia de la Postpandemia}
+%\booktitle{Los Desafíos Fiscales en la Colombia Postpandemia}
+\booktitle{El laberinto fiscal de Colombia}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Autor/ Autores %%%%%%%%%%%%%%%%%%%%%%%%%
+\authors{Oliver Pardo}
+
+
+%%%%%%%%%%%%% Titulo del libro: Segunda carátula %%%%%%%%%%%%%%%%%%
+%\offprintinfo{La Crisis Fiscal en la Colombia de la Postpandemia}{Oliver Pardo}
+%\offprintinfo{Los Desafíos Fiscales en la Colombia Postpandemia}{Oliver Pardo}
+\offprintinfo{El laberinto fiscal de Colombia}{Oliver Pardo}
+
+%\halftitlepage
+\titlepage
+
+%%%%%%%%%%%%% Página de créditos %%%%%%%%%%%%%%%%%%
+%\begin{copyrightpage}[Oliver Pardo, Primera Edición]{}\\
+
+%Editado e Impreso en:
+%\copyright %Editorial xxxx
+%Pontificia Universidad Javeriana
+%XXXX, XXX, XXXX
+%Teléfono: XXXX
+%E-mail: xxxx@xxxx
+%Bogotá-Colombia\\
+
+%\textit{Primera edici\'on, mes del 2025} 
+%Tiraje:   ejemplares\\
+
+%Hecho en xxxx N$^\circ$: 
+%ISBN: \\
+
+%Reservados todos los derecho. No se permite la reproducción total o parcial de esta obra, ni su incorporación a un sistema informático, ni su transmisión en cualquier forma o por cualquier medio (electrónico, mecánico, fotocopia, grabación u otros) sin autorización previa y por  escrito de los titulares del \textit{copyright}. La infracción de dichos derechos puede constituir un delito contra la propiedad intelectual.\\
+
+%IMPRESO EN COLOMBIA
+
+%\end{copyrightpage}
+
+%%%%%%%%%%%%%%%% Dedicatoria %%%%%%%%%%%%%%%%%%
+%\begin{dedication}
+%A los Colombianos que por el solo hecho de tratar de sobrevivir mediante el ejercicio de actividades formales e informales impulsan el desarrollo económico del país, a pesar de las difíciles circunstancias que les impone el contexto normativo e institucional del país.
+%\end{dedication}
+%%%%%%%%%%%%% Contenido en breve %%%%%%%%%%%%%%%%%%
+%\contentsinbrief
+
+%%%%%%%%%%%%% Índice General %%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+%%%%%%%%%%%%% Índice de figuras %%%%%%%%%%%%%%%%%%
+%\listoffigures
+
+%%%%%%%%%%%%% Índice de tablas %%%%%%%%%%%%%%%%%%
+%\listoftables
+
+%%%%%%%%%%%%% Agradecimiento %%%%%%%%%%%%%%%%%%
+\begin{acknowledgments}
+Agradezco a Andrés Garzón, Carlos Arturo Gómez, Liliana Heredia, Susana Herrera Grisales, Daniel Osorio, Camilo Peña, Juan Mauricio Ramírez, William Reyes y Mauricio Salazar por sus valiosos comentarios a versiones preliminares de este libro. Sus aportes contribuyeron de manera significativa a fortalecer los argumentos y enriquecer el análisis presentado.
+
+Extiendo igualmente mi reconocimiento al equipo del Observatorio Fiscal de la Pontificia Universidad Javeriana, espacio en el que tuve la oportunidad de trabajar y desde el cual se coeditó esta obra. También agradezco al equipo del Ministerio de Hacienda; aunque este libro fue elaborado con posterioridad a mi paso por la entidad, las discusiones técnicas sostenidas durante mi tiempo allí enriquecieron varios de los planteamientos desarrollados en el texto.
+
+Las interpretaciones, juicios y eventuales omisiones contenidas en esta obra son responsabilidad exclusiva del autor.
+\end{acknowledgments}
+
+%%%%%%%%%%%%% Presentación %%%%%%%%%%%%%%%%%%
+%\begin{presentation}
+%\lipsum[2-4] %%Reemplazar por texto
+%\end{presentation}
+
+%%%%%%%%%%%%% Texto %%%%%%%%%%%%%%%%%%
+\include{Capitulos/Prologo}
+\include{Capitulos/Prefacio}
+\include{Capitulos/Introducion}
+\include{Capitulos/Capitulo01}
+\include{Capitulos/Capitulo02}
+\include{Capitulos/Capitulo03}
+\include{Capitulos/Capitulo04}
+\include{Capitulos/Capitulo05}
+\include{Capitulos/Capitulo06}
+\include{Capitulos/Capitulo07}
+\include{Capitulos/Epilogo}
+
+%%%%%%%%%%%%%%% Bibliografía %%%%%%%%%%%%%%%%%%
+\startonoddpage
+\markboth{BIBLIOGRAF\'IA}{BIBLIOGRAF\'IA}
+\addcontentsline{toc}{chapter}{\fontsize{10}{1}\fontfamily{phv}\selectfont\textbf{BIBLIOGRAFÍA}}
+\printbibliography
+
+%%%%%%%%%%%%% Índice de figuras %%%%%%%%%%%%%%%%%%
+\listoffigures
+
+%%%%%%%%%%%%% Índice de tablas %%%%%%%%%%%%%%%%%%
+\listoftables
+
+\newacronym{gnc}{GNC}{Gobierno Nacional Central}
+\newacronym{fepc}{FEPC}{Fondo de Estabilización de Precios de los Combustibles}
+\newacronym{sgp}{SGP}{Sistema General de Participaciones}
+\newacronym{dian}{DIAN}{Dirección de Impuestos y Aduanas Nacionales}
+\newacronym{pgb}{PGN}{Presupuesto General de la Nación}
+\newacronym{carf}{CARF}{Comité Autónomo de la Regla Fiscal}
+\newacronym{oatp}{OATP}{Oficina de Asistencia Técnica Presupuestal}
+\newacronym{mfmp}{MFMP}{Marco Fiscal de Mediano Plazo}
+\newacronym{et}{ET}{Entidad Territorial}
+\newacronym{ffaa}{FFAA}{Fuerzas Armadas}
+\newacronym{upc}{UPC}{Unidad de Pago por Capitación}
+\newacronym{sgsss}{SGSSS}{Sistema General de Seguridad Social en Salud}
+\newacronym{eps}{EPS}{Entidad Promotora de Salud}
+\newacronym{ips}{IPS}{Institución Prestadora de Servicios de Salud}
+\newacronym{adres}{ADRES}{Administradora de los Recursos del Sistema General de Seguridad Social en Salud}
+\newacronym{pgn}{PGN}{Presupuesto General de la Nación}
+\newacronym{app}{APP}{Asociación Público Privada}
+\newacronym{vf}{VF}{Vigencias Futuras}
+\newacronym{sgr}{SGR}{Sistema General de Regalías}
+\newacronym{sena}{SENA}{Servicio Nacional de Aprendizaje}
+\newacronym{icbf}{ICBF}{Instituto Colombiano de Bienestar Familiar}
+\newacronym{tuv}{TUV}{Transacción de Única Vez}
+\newacronym{imf}{FMI}{Fondo Monetario Internacional}
+\newacronym{oecd}{OCDE}{Organización para la Cooperación y el Desarrollo Económicos}
+\newacronym{gmf}{GMF}{Gravamen a los Movimientos Financieros}
+\newacronym{rui}{RUI}{Registro Único de Ingresos}
+\newacronym{dnp}{DNP}{Departamento Nacional de Planeación}
+\newacronym{fepc}{FEPC}{Fondo de Estabilización de Precios de los Combustibles}
+\newacronym{pib}{PIB}{Producto Interno Bruto}
+\newacronym{gnc}{GNC}{Gobierno Nacional Central}
+\newacronym{fmi}{FMI}{Fondo Monetario Internacional}
+\newacronym{dian}{DIAN}{Dirección de Impuestos y Aduanas Nacionales}
+\newacronym{sgp}{SGP}{Sistema General de Participaciones}
+\newacronym{tes}{TES}{Títulos de Tesorería}
+\newacronym{fome}{FOME}{Fondo de Mitigación de Emergencias}
+\newacronym{mfmp}{MFMP}{Marco Fiscal de Mediano Plazo}
+
+%%%%%%%%%%%%% Acronimos %%%%%%%%%%%%%%%%%%
+%\chapter*{Acrónimos}
+%\addcontentsline{toc}{chapter}{Lista de Acrónimos}
+%\printglossary[type=\acronymtype]
+\printglossary[type=\acronymtype, title={Acrónimos}]
+
+\newpage
+\thispagestyle{empty}
+
+\section*{Sobre el autor}
+
+\noindent
+\textbf{Oliver Pardo} es Profesor Asociado de la Pontificia Universidad Javeriana. Economista de la Universidad Nacional con doctorado en Economía del London School of Economics. Ha sido director de Política Macroeconómica del Ministerio de Hacienda, director del Observatorio Fiscal de la Pontificia Universidad Javeriana, director de Estudios Económicos de Asobancaria e investigador de la Dirección de Estudios Económicos del Departamento Nacional de Planeación. El profesor Pardo ha publicado en revistas académicas como el \textit{Journal of Population Economics} y el \textit{Journal of Mathematical Economics}.
+
+
+\end{document}
+
+
+
+
+
+

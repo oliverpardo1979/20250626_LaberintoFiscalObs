@@ -1,0 +1,24 @@
+\begin{figure}
+    \centering
+    \caption{Valor de las mercancías de contrabando (\% PIB)}
+    \label{fig:contrabando}
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            symbolic x coords={2018,2019,2020,2021,2022,2023,Prom.},
+            xtick=data,
+            ymin=0,
+            ymax=3,
+            ylabel={\% del PIB},
+            %xlabel={Año},
+            nodes near coords,
+            enlarge x limits=0.2,
+            bar width=20pt,
+            x tick label style={rotate=90, anchor=east},
+            ]
+            \addplot coordinates {(2018,1.8) (2019,2.0) (2020,2.3) (2021,2.2) (2022,2.6) (2023,2.5) (Prom.,2.2)};
+        \end{axis}
+    \end{tikzpicture}
+    \vspace{0.1cm}
+    \par\footnotesize{\textit{Fuente: Elaboración propia con base en \textcite{DIAN2024}}}
+\end{figure}
