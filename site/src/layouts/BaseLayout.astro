@@ -1,0 +1,70 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { book } from "../data/book";
+import { canonicalUrl, withBase } from "../lib/paths";
+import "../styles/global.css";
+import "katex/dist/katex.min.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = book.title,
+  description = book.description,
+  image = "/assets/brand/social-card.png",
+  noindex = false,
+} = Astro.props;
+const isPrepublication = import.meta.env.PUBLICATION_STATUS !== "public";
+const shouldNoIndex = noindex || isPrepublication;
+const pageTitle = title === book.title ? title : `${title} — ${book.title}`;
+const canonical = canonicalUrl(Astro.url.pathname);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: book.title,
+  alternateName: `${book.title}: ${book.subtitle}`,
+  author: { "@type": "Person", name: book.author },
+  publisher: { "@type": "Organization", name: book.publisher },
+  datePublished: book.datePublished,
+  inLanguage: "es",
+  isbn: [book.isbnPrint, book.isbnDigital],
+  sameAs: book.doi,
+  url: canonicalUrl("/"),
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#341a22" />
+    {shouldNoIndex && <meta name="robots" content="noindex, nofollow, noarchive" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href={withBase("/assets/brand/favicon.png")} />
+    <meta property="og:type" content="book" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={canonicalUrl(image)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={canonicalUrl(image)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <SiteHeader />
+    <slot />
+    <SiteFooter />
+  </body>
+</html>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/paths";
+---
+<BaseLayout title="Página no encontrada" noindex>
+  <main id="contenido" class="not-found">
+    <p class="eyebrow">Error 404</p>
+    <h1>Esta salida no conduce al libro</h1>
+    <p>La dirección puede haber cambiado o estar incompleta.</p>
+    <a class="primary-button" href={withBase("/")}>Volver al inicio</a>
+  </main>
+</BaseLayout>
+

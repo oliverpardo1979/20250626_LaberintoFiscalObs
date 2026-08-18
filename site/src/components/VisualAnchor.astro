@@ -1,0 +1,19 @@
+---
+import visuals from "../data/visuals.json";
+import VisualCard from "./VisualCard.astro";
+
+interface Props { visualId: string }
+const { visualId } = Astro.props;
+const visual = visuals.find((item) => item.id === visualId);
+if (!visual) throw new Error(`Visual no registrado: ${visualId}`);
+---
+
+<section class="visual-anchor" id={visual.id} data-visual-anchor={visual.id} aria-label={`${visual.type === "figure" ? "Figura" : "Tabla"} ${visual.number}`}>
+  <div class="mobile-visual">
+    <VisualCard visual={visual as any} />
+  </div>
+  <template data-visual-template>
+    <VisualCard visual={visual as any} compact />
+  </template>
+</section>
+

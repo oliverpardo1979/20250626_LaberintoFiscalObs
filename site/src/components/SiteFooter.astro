@@ -1,0 +1,17 @@
+---
+import { withBase } from "../lib/paths";
+import { book } from "../data/book";
+---
+
+<footer class="site-footer">
+  <div>
+    <strong>{book.title}</strong>
+    <p>{book.author} · {book.publisher} · Primera edición, {book.published.toLowerCase()}</p>
+  </div>
+  <nav aria-label="Enlaces del pie">
+    <a href={book.doi}>DOI</a>
+    <a href={withBase("/referencias/")}>Referencias</a>
+    <a href={withBase("/buscar/")}>Buscar</a>
+  </nav>
+  <p class="rights">© Pontificia Universidad Javeriana y Oliver Pardo. La publicación digital completa requiere autorización.</p>
+</footer>

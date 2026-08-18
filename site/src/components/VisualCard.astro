@@ -1,0 +1,59 @@
+---
+import { withBase } from "../lib/paths";
+
+interface Visual {
+  id: string;
+  type: "figure" | "table";
+  number: string;
+  title: string;
+  image?: string;
+  alt?: string;
+  source?: string;
+  notes?: string;
+  headers?: string[];
+  rows?: string[][];
+}
+
+interface Props {
+  visual: Visual;
+  id?: string;
+  compact?: boolean;
+}
+
+const { visual, id, compact = false } = Astro.props;
+const label = `${visual.type === "figure" ? "Figura" : "Tabla"} ${visual.number}. ${visual.title}`;
+---
+
+<figure class:list={["visual-card", { "visual-card--compact": compact }]} id={id} data-visual-card={visual.id}>
+  <figcaption>
+    <span class="visual-number">{visual.type === "figure" ? "Figura" : "Tabla"} {visual.number}</span>
+    <strong>{visual.title}</strong>
+  </figcaption>
+
+  {visual.type === "figure" && visual.image ? (
+    <div class="visual-image-wrap">
+      <img src={withBase(visual.image)} alt={visual.alt ?? label} loading="lazy" decoding="async" />
+      <button class="visual-expand" type="button" data-open-visual aria-label={`Ampliar ${label}`}>
+        <span aria-hidden="true">↗</span><span>Ampliar</span>
+      </button>
+    </div>
+  ) : (
+    <div class="table-scroll" tabindex="0" role="region" aria-label={`${label}. Desplace horizontalmente si es necesario.`}>
+      <table>
+        <caption class="sr-only">{label}</caption>
+        <thead>
+          <tr>{visual.headers?.map((cell) => <th scope="col" set:html={cell} />)}</tr>
+        </thead>
+        <tbody>
+          {visual.rows?.map((row) => (
+            <tr>{row.map((cell, index) => index === 0 ? <th scope="row" set:html={cell} /> : <td set:html={cell} />)}</tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  {visual.notes && <p class="visual-note" set:html={visual.notes} />}
+  {visual.source && <p class="visual-source"><span>Fuente:</span> {visual.source}.</p>}
+</figure>
+

@@ -1,0 +1,113 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { withBase } from "../lib/paths";
+
+interface Heading { depth: number; slug: string; text: string }
+interface Neighbor { slug: string; label: string }
+interface Props {
+  title: string;
+  shortTitle: string;
+  description: string;
+  chapterNumber?: number | null;
+  author?: string;
+  headings: Heading[];
+  previous?: Neighbor;
+  next?: Neighbor;
+}
+const { title, shortTitle, description, chapterNumber, author, headings, previous, next } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <progress class="reading-progress" max="100" value="0" aria-label="Progreso de lectura"></progress>
+  <main id="contenido" class="reader-shell">
+    <header class="chapter-header">
+      {chapterNumber && <p class="chapter-kicker">Capítulo {chapterNumber}</p>}
+      <h1>{shortTitle}</h1>
+      {author && <p class="chapter-author">Por {author}</p>}
+      {headings.length > 0 && (
+        <details class="chapter-toc">
+          <summary>En este capítulo</summary>
+          <ol>{headings.filter((heading) => heading.depth <= 3).map((heading) => <li class={`depth-${heading.depth}`}><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol>
+        </details>
+      )}
+    </header>
+
+    <div class="reading-grid">
+      <article class="book-prose">
+        <slot />
+      </article>
+      <aside class="visual-rail" aria-label="Figura o tabla relacionada con el pasaje">
+        <div class="visual-stage" id="visual-stage" aria-live="polite">
+          <p class="visual-placeholder">La figura o tabla relacionada aparecerá aquí al avanzar en la lectura.</p>
+        </div>
+      </aside>
+    </div>
+
+    <nav class="chapter-pagination" aria-label="Capítulos anterior y siguiente">
+      {previous ? <a rel="prev" href={withBase(`/${previous.slug}/`)}><span>Anterior</span><strong>{previous.label}</strong></a> : <span />}
+      {next && <a rel="next" href={withBase(`/${next.slug}/`)}><span>Siguiente</span><strong>{next.label}</strong></a>}
+    </nav>
+  </main>
+
+  <dialog class="visual-dialog" id="visual-dialog" aria-label="Vista ampliada">
+    <button type="button" class="dialog-close" data-close-visual>×<span class="sr-only">Cerrar vista ampliada</span></button>
+    <div data-dialog-content></div>
+  </dialog>
+
+  <script>
+    const progress = document.querySelector<HTMLProgressElement>(".reading-progress");
+    const article = document.querySelector<HTMLElement>(".book-prose");
+    const stage = document.querySelector<HTMLElement>("#visual-stage");
+    const anchors = [...document.querySelectorAll<HTMLElement>("[data-visual-anchor]")];
+    const desktop = window.matchMedia("(min-width: 70rem)");
+    let activeId = "";
+
+    function updateProgress() {
+      if (!progress || !article) return;
+      const rect = article.getBoundingClientRect();
+      const total = Math.max(1, article.offsetHeight - window.innerHeight * 0.55);
+      progress.value = Math.max(0, Math.min(100, ((-rect.top + 160) / total) * 100));
+    }
+
+    function showVisual(anchor: HTMLElement) {
+      if (!stage || !desktop.matches || anchor.dataset.visualAnchor === activeId) return;
+      const template = anchor.querySelector<HTMLTemplateElement>("template[data-visual-template]");
+      if (!template) return;
+      activeId = anchor.dataset.visualAnchor ?? "";
+      stage.classList.add("is-changing");
+      window.setTimeout(() => {
+        stage.replaceChildren(template.content.cloneNode(true));
+        stage.classList.remove("is-changing");
+      }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 120);
+    }
+
+    if (anchors.length && desktop.matches) showVisual(anchors[0]);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible[0]) showVisual(visible[0].target as HTMLElement);
+    }, { rootMargin: "-20% 0px -58% 0px", threshold: 0 });
+    anchors.forEach((anchor) => observer.observe(anchor));
+    desktop.addEventListener("change", () => { if (desktop.matches && anchors[0]) showVisual(anchors[0]); });
+    addEventListener("scroll", updateProgress, { passive: true });
+    addEventListener("resize", updateProgress, { passive: true });
+    updateProgress();
+
+    const dialog = document.querySelector<HTMLDialogElement>("#visual-dialog");
+    const dialogContent = dialog?.querySelector<HTMLElement>("[data-dialog-content]");
+    document.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement;
+      const open = target.closest<HTMLButtonElement>("[data-open-visual]");
+      if (open && dialog && dialogContent) {
+        const card = open.closest<HTMLElement>("[data-visual-card]");
+        if (!card) return;
+        const copy = card.cloneNode(true) as HTMLElement;
+        copy.querySelector("[data-open-visual]")?.remove();
+        dialogContent.replaceChildren(copy);
+        dialog.showModal();
+      }
+      if (target.closest("[data-close-visual]")) dialog?.close();
+    });
+    dialog?.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+  </script>
+</BaseLayout>
+
