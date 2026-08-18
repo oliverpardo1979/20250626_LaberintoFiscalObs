@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/paths";
+---
+
+<BaseLayout title="Buscar" description="Buscar capítulos, secciones, figuras y tablas del libro.">
+  <main id="contenido" class="search-page">
+    <p class="eyebrow">Consulta local</p>
+    <h1>Buscar en el libro</h1>
+    <label for="search-input">Capítulo, sección, figura, tabla o término</label>
+    <input id="search-input" type="search" autocomplete="off" placeholder="Ejemplo: deuda, SGP, tabla 6.4…" />
+    <p id="search-status" role="status" aria-live="polite">Escriba al menos dos caracteres.</p>
+    <ol id="search-results" class="search-results"></ol>
+  </main>
+  <script is:inline define:vars={{ indexUrl: withBase("/search-index.json"), baseUrl: withBase("/") }}>
+    (async () => {
+    const input = document.querySelector("#search-input");
+    const results = document.querySelector("#search-results");
+    const status = document.querySelector("#search-status");
+    const index = await fetch(indexUrl).then((response) => response.json()).then((items) => items.map((item) => ({
+      ...item,
+      text: item.text.replace(/\\\\(?:begin|end)(?:preface|introduction)\b/g, "").trim(),
+    })));
+    const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    input.addEventListener("input", () => {
+      const raw = input.value.trim();
+      results.replaceChildren();
+      if (raw.length < 2) { status.textContent = "Escriba al menos dos caracteres."; return; }
+      const query = normalize(raw);
+      const matches = index.filter((item) => normalize(`${item.title} ${item.text}`).includes(query)).slice(0, 30);
+      status.textContent = `${matches.length} resultado${matches.length === 1 ? "" : "s"}.`;
+      for (const item of matches) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = `${baseUrl}${item.slug}/`;
+        const title = document.createElement("strong");
+        title.textContent = item.title;
+        const excerpt = document.createElement("span");
+        const haystack = normalize(item.text);
+        const at = Math.max(0, haystack.indexOf(query) - 80);
+        excerpt.textContent = `${at ? "…" : ""}${item.text.slice(at, at + 250)}…`;
+        a.append(title, excerpt);
+        li.append(a);
+        results.append(li);
+      }
+    });
+    })();
+  </script>
+</BaseLayout>

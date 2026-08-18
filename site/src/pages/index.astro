@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { book, publishedNavigation } from "../data/book";
+import { withBase } from "../lib/paths";
+---
+
+<BaseLayout>
+  <main id="contenido">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Oliver Pardo</p>
+        <h1>{book.title}</h1>
+        <p class="subtitle">{book.subtitle}</p>
+        <p class="hero-description">{book.description}</p>
+        <a class="primary-button" href={withBase("/prologo/")}>Comenzar a leer <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-maze" aria-hidden="true">
+        <span class="maze-line maze-line-a"></span>
+        <span class="maze-line maze-line-b"></span>
+        <span class="maze-line maze-line-c"></span>
+        <span class="maze-line maze-line-d"></span>
+        <span class="maze-monogram">LF</span>
+      </div>
+    </section>
+
+    <section class="home-section contents-section" aria-labelledby="indice-title">
+      <div class="section-heading">
+        <p class="eyebrow">Contenido</p>
+        <h2 id="indice-title">Índice de la edición</h2>
+      </div>
+      <ol class="book-index">
+        {publishedNavigation.map((item) => (
+          <li>
+            <a href={withBase(`/${item.slug}/`)}>
+              <span class="index-number">{item.number ? String(item.number).padStart(2, "0") : "—"}</span>
+              <span>{item.number ? `Capítulo ${item.number}. ${item.title}` : item.title}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="home-section about-grid" aria-labelledby="sobre-libro">
+      <div>
+        <p class="eyebrow">La obra</p>
+        <h2 id="sobre-libro">Un diagnóstico de la crisis fiscal y sus salidas</h2>
+        <p>{book.description}</p>
+      </div>
+      <dl class="bibliographic-card">
+        <div><dt>Autor</dt><dd>{book.author}</dd></div>
+        <div><dt>Edición</dt><dd>Primera edición, Bogotá, {book.published.toLowerCase()}</dd></div>
+        <div><dt>Editorial</dt><dd>{book.publisher}</dd></div>
+        <div><dt>ISBN impreso</dt><dd>{book.isbnPrint}</dd></div>
+        <div><dt>ISBN digital</dt><dd>{book.isbnDigital}</dd></div>
+        <div><dt>DOI</dt><dd><a href={book.doi}>{book.doi.replace("https://doi.org/", "")}</a></dd></div>
+      </dl>
+    </section>
+
+    <section class="home-section author-section" aria-labelledby="sobre-autor">
+      <p class="eyebrow">Autor</p>
+      <h2 id="sobre-autor">Sobre Oliver Pardo</h2>
+      <p>{book.authorBio}</p>
+    </section>
+
+    <section class="home-section institutional" aria-labelledby="creditos-institucionales">
+      <div>
+        <p class="eyebrow">Créditos</p>
+        <h2 id="creditos-institucionales">Identidad institucional publicada</h2>
+        <p>Edición de la Pontificia Universidad Javeriana, con el Observatorio Fiscal y la Editorial Pontificia Universidad Javeriana.</p>
+        <p class="approval-notice">El uso público de las marcas institucionales debe ser confirmado antes del despliegue final.</p>
+      </div>
+      <img src={withBase("/assets/brand/published-institutional-lockup.png")} alt="Pontificia Universidad Javeriana, Observatorio Fiscal y Editorial Pontificia Universidad Javeriana" loading="lazy" />
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import { withBase } from "../lib/paths";
+import { publishedNavigation } from "../data/book";
+---
+
+<header class="site-header">
+  <a class="brand-link" href={withBase("/")} aria-label="Inicio — El laberinto fiscal de Colombia">
+    <span aria-hidden="true" class="brand-mark">LF</span>
+    <span>El laberinto fiscal</span>
+  </a>
+  <nav aria-label="Navegación principal">
+    <details class="contents-menu">
+      <summary>Índice</summary>
+      <div class="contents-popover">
+        <ol>
+          {publishedNavigation.map((item) => <li><a href={withBase(`/${item.slug}/`)}>{item.number ? `Capítulo ${item.number}. ${item.title}` : item.title}</a></li>)}
+        </ol>
+      </div>
+    </details>
+    <a href={withBase("/buscar/")}>Buscar</a>
+  </nav>
+</header>
