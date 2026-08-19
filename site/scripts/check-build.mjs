@@ -13,9 +13,12 @@ const required = [
 
 for (const file of required) await access(new URL(file, dist));
 const home = await readFile(new URL("index.html", dist), "utf8");
-for (const marker of ["lang=\"es\"", "application/ld+json", "978-628-502-066-7", "Saltar al contenido"]) {
+for (const marker of ["lang=\"es\"", "application/ld+json", "978-628-502-066-7", "Saltar al contenido", "Ficha editorial"]) {
   if (!home.includes(marker)) throw new Error(`Falta en la compilación: ${marker}`);
 }
+if (home.includes('name="robots" content="noindex')) throw new Error("La página inicial pública no debe incluir noindex");
+const robots = await readFile(new URL("robots.txt", dist), "utf8");
+if (!robots.includes("Allow: /") || !robots.includes("Sitemap:")) throw new Error("robots.txt no habilita el rastreo público");
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -30,4 +33,3 @@ for (const file of htmlFiles) {
   if (/href="\/((?!20250626_LaberintoFiscalObs|\/|#|https?:).)/.test(source)) throw new Error(`Enlace absoluto sin base en ${file}`);
 }
 console.log(`Build verificado: ${htmlFiles.length} páginas HTML.`);
-

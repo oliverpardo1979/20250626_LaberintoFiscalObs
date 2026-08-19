@@ -26,7 +26,7 @@ jobs:
     env:
       SITE_URL: ${{ vars.SITE_URL || 'https://oliverpardo1979.github.io' }}
       BASE_PATH: ${{ vars.BASE_PATH || '/20250626_LaberintoFiscalObs' }}
-      PUBLICATION_STATUS: ${{ vars.PUBLICATION_STATUS || 'staging' }}
+      PUBLICATION_STATUS: ${{ vars.PUBLICATION_STATUS || 'public' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4

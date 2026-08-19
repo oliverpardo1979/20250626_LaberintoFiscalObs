@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = ({ site }) => {
-  const isPublic = import.meta.env.PUBLICATION_STATUS === "public";
+  const isPublic = import.meta.env.PUBLICATION_STATUS !== "staging";
   const rules = isPublic
     ? `User-agent: *\nAllow: /\nSitemap: ${new URL(`${import.meta.env.BASE_URL}sitemap-index.xml`, site)}\n`
     : "User-agent: *\nDisallow: /\n";

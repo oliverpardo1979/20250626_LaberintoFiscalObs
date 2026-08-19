@@ -73,9 +73,9 @@ Configuración inicial:
 
 - `SITE_URL=https://oliverpardo1979.github.io`
 - `BASE_PATH=/20250626_LaberintoFiscalObs`
-- `PUBLICATION_STATUS=staging` mientras la página esté en prepublicación
+- `PUBLICATION_STATUS=public`
 
-En modo `staging`, todas las páginas incluyen `noindex, nofollow, noarchive` y `robots.txt` solicita a los buscadores no rastrear el sitio. La URL sigue siendo pública para quien la conozca. Después de obtener las autorizaciones editoriales, cree la variable `PUBLICATION_STATUS=public` en `Settings → Secrets and variables → Actions → Variables` y vuelva a ejecutar el workflow.
+El modo público es ahora el valor predeterminado: las páginas pueden indexarse y `robots.txt` permite el rastreo. Para una revisión privada futura, cree temporalmente la variable `PUBLICATION_STATUS=staging`; ese modo añade `noindex, nofollow, noarchive` y bloquea el rastreo en `robots.txt`.
 - URL resultante: `https://oliverpardo1979.github.io/20250626_LaberintoFiscalObs/`
 
 Estas variables ya tienen esos valores como predeterminados. Si se usan variables del repositorio, se configuran en `Settings → Secrets and variables → Actions → Variables`.
@@ -91,4 +91,4 @@ Los resultados de compilación, pruebas funcionales y Lighthouse están en [QA_R
 
 ## Decisiones editoriales y permisos
 
-No se incluye la cubierta, un enlace de descarga ni una copia pública del PDF. La portada web, la imagen social y el favicon utilizan una composición original que no reproduce la cubierta impresa. Tampoco se instala analítica, cookies o rastreadores. Antes del despliegue público deben resolverse las decisiones consignadas en [DECISIONS_REQUIRING_APPROVAL.md](./DECISIONS_REQUIRING_APPROVAL.md), en especial el uso de las marcas institucionales y la publicación del texto completo en la web.
+Por decisión del autor, la versión web y los usos descritos de las marcas institucionales pasan a estado de publicación abierta. No se incluye la cubierta, un enlace de descarga ni una copia pública del PDF; esos materiales permanecen excluidos por decisión del autor. La portada web, la imagen social y el favicon utilizan una composición original que no reproduce la cubierta impresa. Tampoco se instala analítica, cookies o rastreadores. Las decisiones que todavía requieren intervención del autor están en [DECISIONS_REQUIRING_APPROVAL.md](./DECISIONS_REQUIRING_APPROVAL.md).
