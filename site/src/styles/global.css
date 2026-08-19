@@ -229,7 +229,7 @@ button, input, summary { font: inherit; }
 .author-section { background: var(--wine-950); color: var(--paper-50); }
 .author-section .eyebrow { color: var(--chartreuse-500); }
 .institutional img { width: 100%; padding: 1.25rem; background: var(--white); }
-.approval-notice { padding-left: 1rem; border-left: .35rem solid var(--chartreuse-500); color: var(--ink-700); font-family: var(--sans) !important; font-size: .92rem !important; }
+.official-link { padding-left: 1rem; border-left: .35rem solid var(--chartreuse-500); color: var(--ink-700); font-family: var(--sans) !important; font-size: .92rem !important; }
 
 .reading-progress { position: fixed; z-index: 70; top: 4.15rem; left: 0; width: 100%; height: .2rem; border: 0; appearance: none; }
 .reading-progress::-webkit-progress-bar { background: transparent; }

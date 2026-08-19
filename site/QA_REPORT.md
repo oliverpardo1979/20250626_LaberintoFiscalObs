@@ -1,16 +1,17 @@
 # Informe de calidad
 
-Validación ejecutada el 18 de agosto de 2026 sobre una compilación de producción local.
+Validación ejecutada el 19 de agosto de 2026 sobre una compilación de producción local.
 
 ## Compilación y contenido
 
 - `astro check`: 0 errores, 0 advertencias y 0 indicaciones.
-- Pruebas editoriales: 5 de 5 aprobadas.
+- Pruebas editoriales y de publicación: 8 de 8 aprobadas.
 - Compilación estática: 15 páginas generadas.
 - Verificador del artefacto: sin comandos LaTeX visibles, rutas críticas presentes, metadatos y datos estructurados incluidos.
 - Inventario: 21 figuras y 18 tablas publicadas; cuatro activos excluidos por no pertenecer a la edición impresa.
 - El PDF definitivo no aparece en `public/` ni en la salida del sitio.
 - La cubierta y sus derivados no aparecen en `public/`; la imagen social y el favicon son composiciones originales para la web.
+- La compilación pública no incluye `noindex`; `robots.txt` permite el rastreo e identifica el mapa del sitio.
 
 ## Lighthouse
 

@@ -19,7 +19,7 @@ const {
   image = "/assets/brand/social-card.png",
   noindex = false,
 } = Astro.props;
-const isPrepublication = import.meta.env.PUBLICATION_STATUS !== "public";
+const isPrepublication = import.meta.env.PUBLICATION_STATUS === "staging";
 const shouldNoIndex = noindex || isPrepublication;
 const pageTitle = title === book.title ? title : `${title} — ${book.title}`;
 const canonical = canonicalUrl(Astro.url.pathname);

@@ -167,7 +167,7 @@ def replace_command(text: str, command: str, fn) -> str:
 
 def latex_text(value: str) -> str:
     replacements = {
-        r"\'a": "á", r"\'e": "é", r"\'i": "í", r"\'{i}": "í", r"\'o": "ó", r"\'u": "ú",
+        r"\'a": "á", r"\'e": "é", r"\'i": "í", r"\'\i": "í", r"\'{i}": "í", r"\'o": "ó", r"\'u": "ú",
         r"\'A": "Á", r"\'E": "É", r"\'I": "Í", r"\'O": "Ó", r"\'U": "Ú", r"\~n": "ñ", r"\~{n}": "ñ",
         r"\&": "&", r"\%": r"\%", r"\$": r"\$", r"\#": "#", r"\_": "_", "~": " ",
         "``": "“", "''": "”", "---": "—", "--": "–", r"\,": " ", r"\;": " ", r"\!": "",
@@ -551,7 +551,8 @@ def build_content() -> None:
         front.extend(["---", "", 'import VisualAnchor from "../../components/VisualAnchor.astro";', "", mdx, ""])
         filename = f"{order:02d}-{slug.replace('/', '-')}.mdx"
         (OUT_CONTENT / filename).write_text("\n".join(front), encoding="utf-8")
-        clean_search = re.sub(r"<[^>]+>|\[[^]]+\]\([^)]*\)|[*#{}]", " ", mdx)
+        clean_search = re.sub(r"\\(?:begin|end)(?:preface|introduction)\b", " ", mdx)
+        clean_search = re.sub(r"<[^>]+>|\[[^]]+\]\([^)]*\)|[*#{}]", " ", clean_search)
         search_rows.append({"title": title, "slug": slug, "kind": kind, "text": re.sub(r"\s+", " ", clean_search)})
         for visual_id in used:
             visual = next(item for item in VISUAL_ROWS if item["id"] == visual_id)

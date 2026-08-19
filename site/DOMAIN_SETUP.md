@@ -2,17 +2,35 @@
 
 El sitio puede publicarse primero en GitHub Pages y conectar un dominio después. No es necesario modificar los componentes ni las rutas. La compra del dominio no está incluida: exige una decisión, datos del titular y un pago del propietario.
 
-## 1. Buscar y comparar
+## 1. Recomendación y verificación actual
 
-Consultar en un registrador acreditado la disponibilidad, el precio del primer año y —sobre todo— el precio de renovación de:
+La primera opción recomendada es `laberintofiscal.co`: coincide con el nombre del libro, conserva una dirección corta y refuerza su relación con Colombia. Como protección opcional, puede registrarse también `laberintofiscal.com` y redirigirlo al dominio principal. `laberintofiscal.com.co` es reconocible en Colombia, pero es más largo; `laberintofiscal.org` puede sugerir que el sitio pertenece a una organización independiente.
 
-- `laberintofiscal.co`
-- `laberintofiscal.com.co`
-- `laberintofiscal.org`
+Consulta realizada el 19 de agosto de 2026:
 
-`laberintofiscal.co` aparecía dos veces en la lista inicial; aquí se presenta una sola vez. No se afirma que ninguno esté disponible. La verificación debe hacerse inmediatamente antes de la compra, pues tanto la disponibilidad como el precio cambian.
+| Dominio | Resultado de la consulta registral |
+|---|---|
+| `laberintofiscal.co` | Sin registro RDAP encontrado |
+| `laberintofiscal.com.co` | Sin registro RDAP encontrado |
+| `laberintofiscal.org` | Sin registro RDAP encontrado |
+| `laberintofiscal.com` | Sin registro RDAP encontrado |
 
-Comparar también: privacidad de los datos del titular, soporte de DNS, costos de transferencia, moneda de cobro y facilidad para descargar el código de autorización.
+Un resultado RDAP «no encontrado» indica que no existe un registro visible en ese momento, pero no reserva el nombre ni sustituye la comprobación del registrador. La disponibilidad definitiva y el carácter estándar o *premium* deben confirmarse en el carrito inmediatamente antes del pago.
+
+Precios observados el mismo día para dominios estándar de un año:
+
+| Extensión y registrador | Registro | Renovación |
+|---|---:|---:|
+| `.co` en [Porkbun](https://porkbun.com/products/domains) | USD 15,76 en promoción | USD 31,20 |
+| `.co` en [MI.COM.CO](https://mi.com.co/dominios) | COP 19.990 en promoción | COP 229.990 |
+| `.com.co` en [MI.COM.CO](https://mi.com.co/dominios) | COP 14.990 en promoción | COP 149.990 |
+| `.org` en [Porkbun](https://porkbun.com/products/domains) | USD 7,98 en promoción | USD 11,84 |
+| `.org` en [MI.COM.CO](https://mi.com.co/dominios) | COP 94.990 | COP 94.990 |
+| `.com` en [Porkbun](https://porkbun.com/products/domains) | USD 11,08 | USD 11,08 |
+
+Los precios, impuestos y promociones pueden cambiar. Porkbun ofrece un costo de renovación menor en la comparación consultada; MI.COM.CO cobra en pesos, ofrece factura colombiana y puede resultar más sencillo para pagos locales. Cloudflare Registrar también admite `.co` y `.org` con precios sin margen sobre la tarifa del registro, pero el valor exacto debe verificarse dentro de su buscador antes de decidir.
+
+Además del precio, conviene comparar la privacidad de los datos del titular, el soporte de DNS, los costos de transferencia, la moneda de cobro y la facilidad para descargar el código de autorización. No se ha comprado ni reservado ningún dominio.
 
 ## 2. Registrar con control institucional claro
 
@@ -95,4 +113,3 @@ Cuando GitHub haya emitido el certificado, regresar a `Settings → Pages` y act
 - la redirección de HTTP a HTTPS.
 
 GitHub Pages admite HTTPS en dominios correctamente configurados; la [guía oficial de HTTPS](https://docs.github.com/es/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https) explica también qué registros adicionales pueden impedir la emisión del certificado.
-

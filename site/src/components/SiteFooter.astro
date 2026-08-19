@@ -10,8 +10,9 @@ import { book } from "../data/book";
   </div>
   <nav aria-label="Enlaces del pie">
     <a href={book.doi}>DOI</a>
+    <a href={book.officialPage}>Ficha editorial</a>
     <a href={withBase("/referencias/")}>Referencias</a>
     <a href={withBase("/buscar/")}>Buscar</a>
   </nav>
-  <p class="rights">© Pontificia Universidad Javeriana y Oliver Pardo. La publicación digital completa requiere autorización.</p>
+  <p class="rights">{book.copyright}</p>
 </footer>

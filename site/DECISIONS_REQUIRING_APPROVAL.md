@@ -1,38 +1,30 @@
-# Decisiones que requieren aprobación del autor
+# Estado de publicación y decisiones pendientes
 
-Estas decisiones no deben resolverse por inferencia técnica. El sitio queda listo para publicar, pero el despliegue público debe esperar la aprobación de los puntos aplicables.
+## Decisión vigente del autor
 
-## 1. Marcas institucionales
+La versión web pasa a estado de publicación abierta. El sitio puede publicar el texto, las figuras y las tablas en HTML; mostrar las marcas institucionales en el bloque de créditos; permanecer en GitHub Pages; conectarse después a un dominio propio; y enlazar la ficha oficial de la Editorial Javeriana.
 
-Confirmar por escrito el uso público de:
+Este archivo registra la configuración editorial aplicada al sitio. No sustituye los contratos ni constituye por sí mismo un concepto jurídico.
 
-- el logo del Observatorio Fiscal;
-- la marca de la Pontificia Universidad Javeriana;
-- la marca de la Editorial Pontificia Universidad Javeriana.
+## Cubierta y PDF
 
-Los archivos web son copias o recortes de los activos oficiales. No fueron redibujados, deformados ni recoloreados. La cubierta fue excluida del sitio por decisión del autor el 18 de agosto de 2026; la portada web y la imagen social utilizan una composición original que no reproduce la cubierta impresa.
+La cubierta y el PDF digital completo permanecen fuera del sitio. No se copian a `site/public`, no se incluyen en la compilación y no existe un botón de descarga. Su eventual incorporación requiere una decisión posterior del autor.
 
-## 2. Contenido completo en la web
+La portada web, la imagen social y el favicon utilizan una composición original que no reproduce la cubierta impresa.
 
-Confirmar con los titulares de los derechos que el texto completo del libro puede publicarse en HTML/MDX y con acceso abierto. Excluir el archivo PDF no elimina esta necesidad: el sitio reproduce la edición digital en otro formato.
+## Dominio definitivo
 
-## 3. PDF digital
+Todavía debe elegirse y comprarse el dominio. El registro exige definir el titular, proporcionar datos de contacto y realizar un pago; por eso esta operación corresponde al autor. La recomendación y la comparación de opciones están en `DOMAIN_SETUP.md`.
 
-El autor decidió no publicar el PDF por ahora. El archivo permanece fuera de `site/public`, no se copia durante la construcción y no existe botón de descarga. Cualquier cambio futuro requiere una nueva autorización expresa.
+## Aviso de derechos
 
-## 4. Dominio definitivo
+El sitio conserva el aviso de derechos publicado en el libro. No se declara una licencia abierta ni se autoriza la reutilización de la obra por terceros.
 
-Elegir el nombre, el titular registral y el responsable de renovación. La disponibilidad y los precios deben verificarse al comprar. El dominio no ha sido adquirido ni reservado.
+## Diferencias editoriales
 
-## 5. Diferencias editoriales
-
-Revisar `CONTENT_AUDIT.md`, en particular:
+Conviene conservar como registro `CONTENT_AUDIT.md`, en particular:
 
 - el título anterior comentado del capítulo 3;
 - los cuatro activos que no aparecen en la edición final;
 - el uso de recortes PNG del PDF como alternativa a SVG para las figuras TikZ/PGFPlots;
 - las normalizaciones de capitalización y terminología que siguen la edición impresa.
-
-## 6. Publicación
-
-Confirmar el momento del primer despliegue público en GitHub Pages. La configuración ya está preparada, pero no se ha ejecutado una publicación ni se han cambiado ajustes del repositorio remoto.

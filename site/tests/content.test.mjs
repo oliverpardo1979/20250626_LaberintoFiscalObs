@@ -34,6 +34,16 @@ test("no se distribuye el PDF definitivo", async () => {
   assert.ok(publicFiles.every((file) => !file.toLowerCase().endsWith(".pdf")));
 });
 
+test("la cubierta tampoco se distribuye como activo web", async () => {
+  const publicFiles = await readdir(new URL("public/", root), { recursive: true });
+  assert.ok(publicFiles.every((file) => !/(^|[\\/])cover\.(?:png|jpe?g|webp|avif|svg)$/i.test(file)));
+});
+
+test("el índice de búsqueda no contiene comandos LaTeX", async () => {
+  const index = await readFile(new URL("public/search-index.json", root), "utf8");
+  assert.doesNotMatch(index, /\\\\(?:begin|end|[A-Za-z]+)/);
+});
+
 test("no se filtran entornos LaTeX al contenido publicado", async () => {
   const files = (await readdir(content)).filter((file) => file.endsWith(".mdx"));
   for (const file of files) {
