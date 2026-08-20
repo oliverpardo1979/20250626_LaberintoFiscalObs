@@ -7,6 +7,11 @@ import { book } from "../data/book";
   <div>
     <strong>{book.title}</strong>
     <p>{book.author} · {book.publisher} · Primera edición, {book.published.toLowerCase()}</p>
+    <p>
+      <a href={'mailto:' + book.contact.email}>{book.contact.email}</a>
+      · <a href={book.contact.x} target="_blank" rel="me noopener noreferrer">X / Twitter</a>
+      · <a href={book.contact.linkedin} target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+    </p>
   </div>
   <nav aria-label="Enlaces del pie">
     <a href={book.doi}>DOI</a>
