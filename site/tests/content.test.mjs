@@ -17,6 +17,17 @@ test("se generan todas las entradas de lectura", async () => {
   assert.equal(files.length, 12);
 });
 
+test("el contacto y los perfiles personales del autor están publicados", async () => {
+  const book = await readFile(new URL("src/data/book.ts", root), "utf8");
+  const footer = await readFile(new URL("src/components/SiteFooter.astro", root), "utf8");
+  const introduction = await readFile(new URL("src/content/chapters/03-introduccion.mdx", root), "utf8");
+  assert.match(book, /oliverpardo@gmail\.com/);
+  assert.ok(book.includes("https://x.com/opardor"));
+  assert.ok(book.includes("linkedin.com/in/oliver-pardo-4a606422"));
+  assert.match(footer, /mailto:/);
+  assert.match(introduction, /mailto:oliverpardo@gmail\.com/);
+});
+
 test("el inventario coincide con 21 figuras y 18 tablas publicadas", async () => {
   const visuals = JSON.parse(await readFile(new URL("src/data/visuals.json", root), "utf8"));
   assert.equal(visuals.filter((item) => item.type === "figure").length, 21);
