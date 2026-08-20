@@ -9,6 +9,11 @@ export const book = {
   isbnDigital: '978-628-502-066-7',
   doi: 'https://doi.org/10.11144/Javeriana.9786285020667',
   officialPage: 'https://www.javeriana.edu.co/web/editorial/w/laberinto-fiscal-colombia',
+  contact: {
+    email: 'oliverpardo@gmail.com',
+    x: 'https://x.com/opardor',
+    linkedin: 'https://www.linkedin.com/in/oliver-pardo-4a606422/'
+  },
   description:
     'Desde la pandemia, el gasto público ha crecido de manera persistente sin que los ingresos tributarios hayan seguido el mismo ritmo. El libro explica cómo las rigideces del gasto y la sobreestimación de los ingresos han producido déficits y problemas de liquidez, y plantea rutas para contener las presiones de gasto, aumentar el recaudo y reformar las instituciones que determinan la política fiscal.',
   authorBio:
