@@ -12,7 +12,6 @@ Generado a partir del PDF definitivo y de las inclusiones LaTeX activas después
 | `Capitulos/Capitulo01.tex` | Capítulo 1. La pandemia y sus secuelas | figure | 1.6 | Pago de intereses del GNC | `/capitulos/1-la-pandemia-y-sus-secuelas/#fig-1-6` | `Figuras/Cap01/Intereses.tex` |
 | `Capitulos/Capitulo02.tex` | Capítulo 2. Dame más gasolina y otras formas de gasto | table | 2.1 | Desagregación del gasto del GNC (porcentaje del PIB) | `/capitulos/2-dame-mas-gasolina-y-otras-formas-de-gasto/#table-2-1` | `Tablas/Cap02/GastoDesagregado.tex` |
 | `Capitulos/Capitulo02.tex` | Capítulo 2. Dame más gasolina y otras formas de gasto | table | 2.2 | Desagregación de transferencias del GNC (porcentaje del PIB) | `/capitulos/2-dame-mas-gasolina-y-otras-formas-de-gasto/#table-2-2` | `Tablas/Cap02/Transferencias2024.tex` |
-| `Capitulos/Capitulo02.tex` | Capítulo 2. Dame más gasolina y otras formas de gasto | table | 2.2 | Desagregación de transferencias del GNC (porcentaje del PIB) | `/capitulos/2-dame-mas-gasolina-y-otras-formas-de-gasto/#table-2-2` | `Tablas/Cap02/Transferencias2024.tex` |
 | `Capitulos/Capitulo02.tex` | Capítulo 2. Dame más gasolina y otras formas de gasto | figure | 2.1 | Balance del GNC con y sin ajuste de causación del FEPC | `/capitulos/2-dame-mas-gasolina-y-otras-formas-de-gasto/#fig-2-1` | `Figuras/Cap02/BalFEPC.tex` |
 | `Capitulos/Capitulo02.tex` | Capítulo 2. Dame más gasolina y otras formas de gasto | figure | 2.2 | Vigencias futuras e inversión pública (porcentaje del PIB) | `/capitulos/2-dame-mas-gasolina-y-otras-formas-de-gasto/#fig-2-2` | `Figuras/Cap02/VF.tex` |
 | `Capitulos/Capitulo02.tex` | Capítulo 2. Dame más gasolina y otras formas de gasto | table | 2.3 | Nómina de la nación presupuestada para el 2025 | `/capitulos/2-dame-mas-gasolina-y-otras-formas-de-gasto/#table-2-3` | `Tablas/Cap02/Personal.tex` |
@@ -33,9 +32,7 @@ Generado a partir del PDF definitivo y de las inclusiones LaTeX activas después
 | `Capitulos/Capitulo05.tex` | Capítulo 5. Conteniendo el gasto | figure | 5.2 | Transferencias del GNC para pensiones y asignaciones de retiro | `/capitulos/5-conteniendo-el-gasto/#fig-5-2` | `Figuras/Cap05/transpensiones.tex` |
 | `Capitulos/Capitulo05.tex` | Capítulo 5. Conteniendo el gasto | figure | 5.3 | Transferencia del GNC a la Adres* | `/capitulos/5-conteniendo-el-gasto/#fig-5-3` | `Figuras/Cap05/trans_upc.tex` |
 | `Capitulos/Capitulo05.tex` | Capítulo 5. Conteniendo el gasto | figure | 5.4 | Proyección del SGP como porcentaje del PIB | `/capitulos/5-conteniendo-el-gasto/#fig-5-4` | `Figuras/Cap05/sgp_forecast.tex` |
-| `Capitulos/Capitulo05.tex` | Capítulo 5. Conteniendo el gasto | figure | 5.4 | Proyección del SGP como porcentaje del PIB | `/capitulos/5-conteniendo-el-gasto/#fig-5-4` | `Figuras/Cap05/sgp_forecast.tex` |
 | `Capitulos/Capitulo05.tex` | Capítulo 5. Conteniendo el gasto | table | 5.1 | Costo de las competencias del GNC transferibles a las ET (2024) | `/capitulos/5-conteniendo-el-gasto/#table-5-1` | `Tablas/Cap05/costocomp.tex` |
-| `Capitulos/Capitulo05.tex` | Capítulo 5. Conteniendo el gasto | table | 5.2 | Nómina pública (2023-2025) | `/capitulos/5-conteniendo-el-gasto/#table-5-2` | `Tablas/Cap05/nomina.tex` |
 | `Capitulos/Capitulo05.tex` | Capítulo 5. Conteniendo el gasto | table | 5.2 | Nómina pública (2023-2025) | `/capitulos/5-conteniendo-el-gasto/#table-5-2` | `Tablas/Cap05/nomina.tex` |
 | `Capitulos/Capitulo06.tex` | Capítulo 6. Inevitables como la muerte | table | 6.1 | Evolución del recaudo de los principales impuestos (porcentaje del PIB) | `/capitulos/6-inevitables-como-la-muerte/#table-6-1` | `Tablas/Cap06/intaggtax2.tex` |
 | `Capitulos/Capitulo06.tex` | Capítulo 6. Inevitables como la muerte | figure | 6.1 | Evolución del recaudo del impuesto a la renta* | `/capitulos/6-inevitables-como-la-muerte/#fig-6-1` | `Figuras/Cap06/rentacree2.tex` |
@@ -48,8 +45,6 @@ Generado a partir del PDF definitivo y de las inclusiones LaTeX activas después
 | `Capitulos/Capitulo06.tex` | Capítulo 6. Inevitables como la muerte | table | 6.6 | Desagregación del gasto tributario del IVA (2023) | `/capitulos/6-inevitables-como-la-muerte/#table-6-6` | `Tablas/Cap06/des_gt_iva.tex` |
 | `Capitulos/Capitulo06.tex` | Capítulo 6. Inevitables como la muerte | figure | 6.4 | Valor de las mercancías de contrabando (porcentaje del PIB) | `/capitulos/6-inevitables-como-la-muerte/#fig-6-4` | `Figuras/Cap06/contrabando.tex` |
 | `Capitulos/Capitulo06.tex` | Capítulo 6. Inevitables como la muerte | table | 6.7 | Recaudo del resto de impuestos como porcentaje del PIB (2024) | `/capitulos/6-inevitables-como-la-muerte/#table-6-7` | `Tablas/Cap06/othertaxes.tex` |
-| `Capitulos/Capitulo06.tex` | Capítulo 6. Inevitables como la muerte | table | 6.7 | Recaudo del resto de impuestos como porcentaje del PIB (2024) | `/capitulos/6-inevitables-como-la-muerte/#table-6-7` | `Tablas/Cap06/othertaxes.tex` |
-| `Capitulos/Capitulo07.tex` | Capítulo 7. Reformando las reglas de juego | figure | 7.1 | Propuesta para el ciclo de aprobación del PGN | `/capitulos/7-reformando-las-reglas-de-juego/#fig-7-1` | `Figuras/Cap07/flujoPGN.tex` |
 | `Capitulos/Capitulo07.tex` | Capítulo 7. Reformando las reglas de juego | figure | 7.1 | Propuesta para el ciclo de aprobación del PGN | `/capitulos/7-reformando-las-reglas-de-juego/#fig-7-1` | `Figuras/Cap07/flujoPGN.tex` |
 
 ## Diferencias y exclusiones relevantes
@@ -57,9 +52,10 @@ Generado a partir del PDF definitivo y de las inclusiones LaTeX activas después
 - El PDF definitivo prevalece en capitalización, numeración, títulos, créditos e identidad institucional.
 - `Capitulos/Capitulo03.tex` conserva un título anterior comentado; no se publicó.
 - Algunas fuentes contienen versiones alternativas después de comentarios; solo se procesó la primera estructura activa incluida por el capítulo.
+- La tabla 6.3 totaliza 0,74 % del PIB en el PDF definitivo; el archivo `Tablas/Cap06/topact.tex` conserva 0,63 %. La versión web usa 0,74 % y no modifica el fuente editorial.
 - Las figuras se publican como recortes PNG de alta resolución del PDF definitivo: el entorno no dispone de una cadena TeX capaz de garantizar SVG fiel. El archivo LaTeX original queda inventariado como fuente.
 
 - `Figuras/Cap04/flexnoflex.tex`: La inclusión está comentada en Capitulo04.tex.
 - `Figuras/Cap04/debt-holders.tex`: La inclusión está dentro de un entorno comment en Capitulo04.tex.
-- `Tablas/Cap04/tax-summ.tex`: La inclusión está comentada. El archivo se renombró desde `tax:summ.tex` para permitir un checkout normal en Windows.
+- `Tablas/Cap04/tax-summ.tex`: La inclusión está comentada. El archivo se renombró desde tax:summ.tex para permitir un checkout normal en Windows.
 - `Tablas/Cap03/Cierre2024PGN2025.tex`: El archivo existe, pero no aparece en una inclusión activa de la edición final.

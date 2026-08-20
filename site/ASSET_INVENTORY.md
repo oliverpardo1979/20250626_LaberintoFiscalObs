@@ -59,8 +59,8 @@
 
 ## Excluidos
 
+- `Cover.pdf`, `Cover.png` y derivados de la cubierta — excluidos de `site/public` por decisión del autor.
 - `Figuras/Cap04/flexnoflex.tex` — La inclusión está comentada en Capitulo04.tex.
 - `Figuras/Cap04/debt-holders.tex` — La inclusión está dentro de un entorno comment en Capitulo04.tex.
-- `Tablas/Cap04/tax-summ.tex` — La inclusión está comentada. El archivo se renombró desde `tax:summ.tex` para permitir un checkout normal en Windows.
+- `Tablas/Cap04/tax-summ.tex` — La inclusión está comentada. El archivo se renombró desde tax:summ.tex para permitir un checkout normal en Windows.
 - `Tablas/Cap03/Cierre2024PGN2025.tex` — El archivo existe, pero no aparece en una inclusión activa de la edición final.
-- `Cover.pdf`, `Cover.png` y derivados de la cubierta — Excluidos de `site/public` por decisión del autor.

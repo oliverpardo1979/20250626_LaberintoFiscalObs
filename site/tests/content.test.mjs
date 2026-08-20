@@ -24,6 +24,41 @@ test("el inventario coincide con 21 figuras y 18 tablas publicadas", async () =>
   assert.ok(visuals.every((item) => item.title && item.number && item.sourceFile));
 });
 
+test("todas las tablas tienen contenido HTML completo y consistente", async () => {
+  const visuals = JSON.parse(await readFile(new URL("src/data/visuals.json", root), "utf8"));
+  const tables = visuals.filter((item) => item.type === "table");
+  for (const table of tables) {
+    assert.ok(table.headers.length > 1, `${table.id}: faltan encabezados`);
+    assert.ok(table.rows.length > 0, `${table.id}: faltan filas`);
+    assert.ok(table.rows.every((row) => row.length === table.headers.length), `${table.id}: ancho inconsistente`);
+    assert.doesNotMatch(JSON.stringify(table), /Conversión pendiente|textbackslash|\\(?:begin|end)\{/i, table.id);
+  }
+});
+
+test("la tabla 6.3 respeta el total publicado en el PDF definitivo", async () => {
+  const visuals = JSON.parse(await readFile(new URL("src/data/visuals.json", root), "utf8"));
+  const table = visuals.find((item) => item.id === "table-6-3");
+  assert.match(table.rows.at(-1).at(-1), /0,74%/);
+});
+
+test("las figuras tienen fuente y descripción alternativa específica", async () => {
+  const visuals = JSON.parse(await readFile(new URL("src/data/visuals.json", root), "utf8"));
+  for (const figure of visuals.filter((item) => item.type === "figure")) {
+    assert.ok(figure.source, `${figure.id}: falta fuente`);
+    assert.ok(figure.alt.length >= 60, `${figure.id}: texto alternativo insuficiente`);
+    assert.doesNotMatch(figure.alt, /Gráfico publicado que presenta/, figure.id);
+  }
+});
+
+test("cada visual aparece una sola vez por capítulo", async () => {
+  const files = (await readdir(content)).filter((file) => file.endsWith(".mdx"));
+  for (const file of files) {
+    const mdx = await readFile(new URL(file, content), "utf8");
+    const ids = [...mdx.matchAll(/<VisualAnchor visualId="([^"]+)" \/>/g)].map((match) => match[1]);
+    assert.equal(new Set(ids).size, ids.length, `${file}: hay anclas visuales duplicadas`);
+  }
+});
+
 test("no se convierten inclusiones comentadas", async () => {
   const visuals = await readFile(new URL("src/data/visuals.json", root), "utf8");
   for (const excluded of ["flexnoflex", "debt-holders", "tax:summ", "Cierre2024PGN2025"]) assert.ok(!visuals.includes(excluded));
