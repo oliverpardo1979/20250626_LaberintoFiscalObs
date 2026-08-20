@@ -8,7 +8,7 @@
     "sourceFile": "Figuras/Cap01/PIB.tex",
     "pdfPage": 29,
     "image": "/assets/figures/fig-1-1.png",
-    "alt": "Gráfico publicado que presenta evolución del PIB. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Serie anual del índice del PIB real de Colombia entre 2019 y 2024, con 2019 igual a uno.",
     "source": "Elaboración propia con base en el DANE",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -22,8 +22,8 @@
     "sourceFile": "Figuras/Cap01/Gasto.tex",
     "pdfPage": 30,
     "image": "/assets/figures/fig-1-2.png",
-    "alt": "Gráfico publicado que presenta gasto del GNC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
-    "source": "Público (2025)",
+    "alt": "Series anuales del gasto total y del gasto primario del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "source": "Ministerio de Hacienda y Crédito Público (2025a)",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
   },
@@ -36,8 +36,8 @@
     "sourceFile": "Figuras/Cap01/Ingreso.tex",
     "pdfPage": 31,
     "image": "/assets/figures/fig-1-3.png",
-    "alt": "Gráfico publicado que presenta ingresos del GNC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
-    "source": "Elaboración propia con base en Público (2025)",
+    "alt": "Series anuales de los ingresos totales y tributarios del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "source": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
   },
@@ -50,8 +50,8 @@
     "sourceFile": "Figuras/Cap01/Balance.tex",
     "pdfPage": 31,
     "image": "/assets/figures/fig-1-4.png",
-    "alt": "Gráfico publicado que presenta balance (déficit o superávit) del GNC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
-    "source": "Público (2025)",
+    "alt": "Series anuales del balance total y del balance primario del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "source": "Ministerio de Hacienda y Crédito Público (2025a)",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
   },
@@ -64,7 +64,7 @@
     "sourceFile": "Figuras/Cap01/Deuda.tex",
     "pdfPage": 32,
     "image": "/assets/figures/fig-1-5.png",
-    "alt": "Gráfico publicado que presenta deuda neta del GNC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Serie anual de la deuda neta del Gobierno Nacional Central como porcentaje del PIB entre 2000 y 2024, junto con el ancla y el límite de la regla fiscal.",
     "source": "Elaboración propia con base el saldo de la deuda del GNC, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -78,8 +78,8 @@
     "sourceFile": "Figuras/Cap01/Intereses.tex",
     "pdfPage": 33,
     "image": "/assets/figures/fig-1-6.png",
-    "alt": "Gráfico publicado que presenta pago de intereses del GNC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
-    "source": "Público (2025)",
+    "alt": "Serie anual del pago de intereses del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "source": "Ministerio de Hacienda y Crédito Público (2025a)",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
   },
@@ -92,8 +92,8 @@
     "sourceFile": "Figuras/Cap02/BalFEPC.tex",
     "pdfPage": 43,
     "image": "/assets/figures/fig-2-1.png",
-    "alt": "Gráfico publicado que presenta balance del GNC con y sin ajuste de causación del FEPC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
-    "source": "Elaboración propia con base en Público (2025)",
+    "alt": "Comparación anual del balance del Gobierno Nacional Central observado y ajustado por la causación del FEPC entre 2019 y 2024.",
+    "source": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
   },
@@ -106,7 +106,7 @@
     "sourceFile": "Figuras/Cap02/VF.tex",
     "pdfPage": 46,
     "image": "/assets/figures/fig-2-2.png",
-    "alt": "Gráfico publicado que presenta vigencias futuras e inversión pública (porcentaje del PIB). Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Series anuales de vigencias futuras y de inversión pública como porcentaje del PIB entre 2019 y 2025.",
     "source": "Elaboración propia con base en Marcos Fiscales de Mediano Plazo 2018–2024 y Balance del GNC, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -120,7 +120,7 @@
     "sourceFile": "Figuras/Cap03/reservas.tex",
     "pdfPage": 58,
     "image": "/assets/figures/fig-3-1.png",
-    "alt": "Gráfico publicado que presenta evolución de reservas (compromisos sin obligar). Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Serie anual de las reservas presupuestales o compromisos sin obligar como porcentaje del PIB entre 2019 y 2024.",
     "source": "Elaboración propia con base en ejecución presupuestal del rezago con recursos de la Nación excluyendo deuda a Enero de cada año, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -134,8 +134,8 @@
     "sourceFile": "Figuras/Cap03/depositos.tex",
     "pdfPage": 64,
     "image": "/assets/figures/fig-3-2.png",
-    "alt": "Gráfico publicado que presenta depósitos del Tesoro Nacional. Consulte el título, la nota y la fuente para interpretar sus medidas.",
-    "source": "",
+    "alt": "Depósitos mensuales del Tesoro Nacional en 2024 comparados con el mínimo de 2019 a 2023, en miles de millones de pesos constantes de 2019.",
+    "source": "Elaboración propia con base en datos de la Dirección de Crédito Público, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
   },
@@ -148,7 +148,7 @@
     "sourceFile": "Figuras/Cap04/Deuda2.tex",
     "pdfPage": 69,
     "image": "/assets/figures/fig-4-1.png",
-    "alt": "Gráfico publicado que presenta proyecciones de la deuda neta del GNC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Proyecciones de la deuda neta del Gobierno Nacional Central como porcentaje del PIB entre 2019 y 2035 bajo distintos escenarios fiscales.",
     "source": "Elaboración propia con base en MFMP 2024, Balance General del GNC y Deuda del GNC, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -162,7 +162,7 @@
     "sourceFile": "Figuras/Cap04/BP2.tex",
     "pdfPage": 69,
     "image": "/assets/figures/fig-4-2.png",
-    "alt": "Gráfico publicado que presenta proyecciones del balance primario del GNC. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Proyecciones del balance primario del Gobierno Nacional Central como porcentaje del PIB entre 2019 y 2035 bajo distintos escenarios fiscales.",
     "source": "Elaboración propia con base en MFMP 2024, Balance del GNC y Deuda del GNC, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -176,7 +176,7 @@
     "sourceFile": "Figuras/Cap05/proyVF.tex",
     "pdfPage": 77,
     "image": "/assets/figures/fig-5-1.png",
-    "alt": "Gráfico publicado que presenta vigencias futuras para inversión (porcentaje del PIB). Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Proyección de las vigencias futuras para inversión como porcentaje del PIB entre 2025 y 2030.",
     "source": "Elaboración propia con base en MFMP 2024, MHCP",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -190,7 +190,7 @@
     "sourceFile": "Figuras/Cap05/transpensiones.tex",
     "pdfPage": 80,
     "image": "/assets/figures/fig-5-2.png",
-    "alt": "Gráfico publicado que presenta transferencias del GNC para pensiones y asignaciones de retiro. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Proyección de las transferencias para pensiones y asignaciones de retiro como porcentaje del PIB entre 2024 y 2035, desagregada por destino.",
     "source": "Marco Fiscal de Mediano Plazo 2024, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -204,7 +204,7 @@
     "sourceFile": "Figuras/Cap05/trans_upc.tex",
     "pdfPage": 86,
     "image": "/assets/figures/fig-5-3.png",
-    "alt": "Gráfico publicado que presenta transferencia del GNC a la Adres*. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Proyección de las transferencias del Gobierno Nacional Central a la Adres como porcentaje del PIB entre 2024 y 2035 bajo dos escenarios de la UPC.",
     "source": "Marco Fiscal de Mediano Plazo 2024, Ministerio de Hacienda",
     "notes": "* No incluye los 4,4 puntos del antiguo CREE",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -218,7 +218,7 @@
     "sourceFile": "Figuras/Cap05/sgp_forecast.tex",
     "pdfPage": 89,
     "image": "/assets/figures/fig-5-4.png",
-    "alt": "Gráfico publicado que presenta proyección del SGP como porcentaje del PIB. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Proyecciones del Sistema General de Participaciones como porcentaje del PIB entre 2024 y 2038 bajo el MFMP y el acto legislativo.",
     "source": "Elaboración propia y MFMP 2024 del Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -232,7 +232,7 @@
     "sourceFile": "Figuras/Cap06/rentacree2.tex",
     "pdfPage": 102,
     "image": "/assets/figures/fig-6-1.png",
-    "alt": "Gráfico publicado que presenta evolución del recaudo del impuesto a la renta*. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Serie anual del recaudo del impuesto sobre la renta como porcentaje del PIB entre 2012 y 2024, incluido el CREE entre 2013 y 2016.",
     "source": "Balance General del GNC, Ministerio de Hacienda",
     "notes": "*Incluye recaudo del CREE entre 2013 y 2016.",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -246,7 +246,7 @@
     "sourceFile": "Figuras/Cap06/citrate2.tex",
     "pdfPage": 104,
     "image": "/assets/figures/fig-6-2.png",
-    "alt": "Gráfico publicado que presenta evolución de la tarifa nominal del impuesto sobre la renta de personas jurídicas*. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Serie anual de la tarifa nominal del impuesto sobre la renta de personas jurídicas entre 2012 y 2024.",
     "source": "Elaboración propia",
     "notes": "*Incluye 9% del CREE entre 2013 y 2016",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -260,7 +260,7 @@
     "sourceFile": "Figuras/Cap06/vat_rev_rate2.tex",
     "pdfPage": 111,
     "image": "/assets/figures/fig-6-3.png",
-    "alt": "Gráfico publicado que presenta evolución del recaudo del IVA. Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Serie anual del recaudo del IVA como porcentaje del PIB entre 2012 y 2024, acompañada por su promedio del período.",
     "source": "Balance general del GNC, Ministerio de Hacienda",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -274,7 +274,7 @@
     "sourceFile": "Figuras/Cap06/contrabando.tex",
     "pdfPage": 113,
     "image": "/assets/figures/fig-6-4.png",
-    "alt": "Gráfico publicado que presenta valor de las mercancías de contrabando (porcentaje del PIB). Consulte el título, la nota y la fuente para interpretar sus medidas.",
+    "alt": "Valor anual de las mercancías de contrabando como porcentaje del PIB entre 2018 y 2023, acompañado por su promedio del período.",
     "source": "Elaboración propia con base en DIAN (2024)",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
@@ -288,8 +288,8 @@
     "sourceFile": "Figuras/Cap07/flujoPGN.tex",
     "pdfPage": 124,
     "image": "/assets/figures/fig-7-1.png",
-    "alt": "Gráfico publicado que presenta propuesta para el ciclo de aprobación del PGN. Consulte el título, la nota y la fuente para interpretar sus medidas.",
-    "source": "",
+    "alt": "Diagrama de seis pasos para la propuesta de validación, presentación y aprobación del Presupuesto General de la Nación.",
+    "source": "Elaboración propia",
     "notes": "",
     "format": "PNG de alta resolución extraído del PDF definitivo"
   },
@@ -374,7 +374,7 @@
       ]
     ],
     "notes": "<em>Incluye reclasificaciones por contribuciones a la nómina. </em>*Excluye reclasificaciones por contribuciones a la nómina.",
-    "source": "Elaboración propia con base en Público (2025)"
+    "source": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)"
   },
   {
     "id": "table-2-2",
@@ -406,7 +406,7 @@
         "<em>0,1</em>"
       ],
       [
-        "Pensiones$^1$",
+        "Pensiones<sup>1</sup>",
         "3,2",
         "4,3",
         "3,6",
@@ -416,7 +416,7 @@
         "<em>0,4</em>"
       ],
       [
-        "Salud$^2$",
+        "Salud<sup>2</sup>",
         "1,7",
         "1,9",
         "2,1",
@@ -436,7 +436,7 @@
         "<em>1,2</em>"
       ],
       [
-        "SENA e ICBF$^3$",
+        "SENA e ICBF<sup>3</sup>",
         "0,2",
         "0,3",
         "0,3",
@@ -506,7 +506,7 @@
         "<em>0,0</em>"
       ],
       [
-        "Resto$^4$",
+        "Resto<sup>4</sup>",
         "0,7",
         "0,9",
         "1,4",
@@ -526,8 +526,8 @@
         "<strong><em>2,9</em></strong>"
       ]
     ],
-    "notes": "$^1$ Incluye bonos pensionales. $^2$ Incluye 4,4 de los 9 puntos del antiguo CREE. $^3$ Corresponde a 3,6 de los 9 puntos del antiguo CREE. $^4$ Incluye a 1 de los 9 puntos del antiguo CREE. *Excluye reclasificaciones por contribuciones a la nómina.",
-    "source": "Elaboración propia con base en Público (2025)"
+    "notes": "<sup>1</sup> Incluye bonos pensionales. <sup>2</sup> Incluye 4,4 de los 9 puntos del antiguo CREE. <sup>3</sup> Corresponde a 3,6 de los 9 puntos del antiguo CREE. <sup>4</sup> Incluye a 1 de los 9 puntos del antiguo CREE. *Excluye reclasificaciones por contribuciones a la nómina.",
+    "source": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)"
   },
   {
     "id": "table-2-3",
@@ -537,10 +537,60 @@
     "label": "tab:Personal",
     "sourceFile": "Tablas/Cap02/Personal.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "<strong>Sector</strong>",
+      "<strong>Cargos (Miles)</strong>",
+      "<strong>Costo (% PIB)</strong>"
+    ],
+    "rows": [
+      [
+        "1. Rama Ejecutiva",
+        "98",
+        "0,6"
+      ],
+      [
+        "2. Militares y Policía",
+        "511",
+        "1,5"
+      ],
+      [
+        "3. Judicial, Legislativa y otros",
+        "88",
+        "1,0"
+      ],
+      [
+        "<strong>Financiación x PGN (1+2+3)</strong>",
+        "<strong>696</strong>",
+        "<strong>3,1</strong>"
+      ],
+      [
+        "4. SGP Educación",
+        "362",
+        "2,1"
+      ],
+      [
+        "5. SGP Salud",
+        "49",
+        "0,2"
+      ],
+      [
+        "6. Universidades",
+        "55",
+        "0,3"
+      ],
+      [
+        "<strong>Financiación x Transferencias (4+5+6)</strong>",
+        "<strong>467</strong>",
+        "<strong>2,6</strong>"
+      ],
+      [
+        "<strong>Gran Total</strong>",
+        "<strong>1163</strong>",
+        "<strong>5,8</strong>"
+      ]
+    ],
+    "notes": "",
+    "source": "Elaboración propia con base en el Anexo Presidencial del PGN 2025"
   },
   {
     "id": "table-3-1",
@@ -550,10 +600,46 @@
     "label": "tab:cierre2023PGN2024",
     "sourceFile": "Tablas/Cap03/cierre2023PGN2024.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "",
+      "<strong>Cierre 2023 (Resultado)</strong>",
+      "<strong>PGN 2024 (Pronóstico)</strong>",
+      "<strong><em>Diferencia</em></strong>"
+    ],
+    "rows": [
+      [
+        "<strong>Ingresos tributarios</strong>",
+        "16,6",
+        "18,6",
+        "<em>2,0</em>"
+      ],
+      [
+        "<strong>Otros ingresos</strong>",
+        "2,1",
+        "2,1",
+        "<em>0,0</em>"
+      ],
+      [
+        "<strong>Gasto primario</strong>",
+        "19,1",
+        "20,6",
+        "<em>1,5</em>"
+      ],
+      [
+        "<strong>Intereses</strong>",
+        "3,9",
+        "4,5",
+        "<em>0,6</em>"
+      ],
+      [
+        "<strong>Déficit</strong>",
+        "4,2",
+        "4,4",
+        "<em>0,2</em>"
+      ]
+    ],
+    "notes": "",
+    "source": "Actualización del Plan Financiero para el PGN 2024 y Balance Fiscal del GNC, Ministerio de Hacienda"
   },
   {
     "id": "table-3-2",
@@ -563,10 +649,46 @@
     "label": "tab:PGN2024Cierre2024",
     "sourceFile": "Tablas/Cap03/PGN2024Cierre2024.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "",
+      "<strong>PGN 2024 (Pronóstico)</strong>",
+      "<strong>Cierre 2024 (Resultado)</strong>",
+      "<strong><em>Diferencia</em></strong>"
+    ],
+    "rows": [
+      [
+        "<strong>Ingresos tributarios</strong>",
+        "18,6",
+        "14,4",
+        "<em>-4,2</em>"
+      ],
+      [
+        "<strong>Otros ingresos</strong>",
+        "2,1",
+        "2,1",
+        "<em>0,0</em>"
+      ],
+      [
+        "<strong>Gasto primario</strong>",
+        "20,6",
+        "18,9",
+        "<em>-1,7</em>"
+      ],
+      [
+        "<strong>Intereses</strong>",
+        "4,5",
+        "4,4",
+        "<em>-0,1</em>"
+      ],
+      [
+        "<strong>Déficit</strong>",
+        "4,4",
+        "6,7",
+        "<em>2,3</em>"
+      ]
+    ],
+    "notes": "",
+    "source": "Actualización del Plan Financiero para el PGN 2024 y Balance Fiscal del GNC, Ministerio de Hacienda"
   },
   {
     "id": "table-3-3",
@@ -576,10 +698,46 @@
     "label": "tab:cierre2023cierre2024",
     "sourceFile": "Tablas/Cap03/cierre2023cierre2024.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "",
+      "<strong>Cierre 2023 (Resultado)</strong>",
+      "<strong>Cierre 2024 (Resultado)</strong>",
+      "<strong><em>Diferencia</em></strong>"
+    ],
+    "rows": [
+      [
+        "<strong>Ingresos tributarios</strong>",
+        "16,6",
+        "14,4",
+        "<em>-2,2</em>"
+      ],
+      [
+        "<strong>Otros ingresos</strong>",
+        "2,1",
+        "2,1",
+        "<em>0,0</em>"
+      ],
+      [
+        "<strong>Gasto primario</strong>",
+        "19,1",
+        "18,9",
+        "<em>-0,2</em>"
+      ],
+      [
+        "<strong>Intereses</strong>",
+        "3,9",
+        "4,4",
+        "<em>0,5</em>"
+      ],
+      [
+        "<strong>Déficit</strong>",
+        "4,2",
+        "6,7",
+        "<em>2,5</em>"
+      ]
+    ],
+    "notes": "",
+    "source": "Balance Fiscal GNC, Ministerio de Hacienda"
   },
   {
     "id": "table-3-4",
@@ -690,10 +848,46 @@
     "label": "tab:Cierre2024PF2025",
     "sourceFile": "Tablas/Cap03/Cierre2024PF2025.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "",
+      "<strong>Cierre 2024 (Resultado)</strong>",
+      "<strong>MFMP 2025 (Pronóstico)</strong>",
+      "<strong><em>Diferencia</em></strong>"
+    ],
+    "rows": [
+      [
+        "<strong>Ingresos tributarios</strong>",
+        "14,4",
+        "15,5",
+        "<em>1,1</em>"
+      ],
+      [
+        "<strong>Otros ingresos</strong>",
+        "2,1",
+        "1,5",
+        "<em>-0,6</em>"
+      ],
+      [
+        "<strong>Gasto primario</strong>",
+        "18,9",
+        "19,5",
+        "<em>0,6</em>"
+      ],
+      [
+        "<strong>Intereses</strong>",
+        "4,4",
+        "4,7",
+        "<em>0,3</em>"
+      ],
+      [
+        "<strong>Déficit</strong>",
+        "6,7",
+        "7,1",
+        "<em>0,4</em>"
+      ]
+    ],
+    "notes": "",
+    "source": "Balance Fiscal del GNC y MFMP 2025, Ministerio de Hacienda"
   },
   {
     "id": "table-4-1",
@@ -703,10 +897,110 @@
     "label": "tab:flexsemiflex",
     "sourceFile": "Tablas/Cap04/flexsemiflex.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "<strong>Categoría</strong>",
+      "<strong>2023</strong>",
+      "<strong>2024</strong>"
+    ],
+    "rows": [
+      [
+        "<strong>Gastos inflexibles</strong>",
+        "<strong>20.1</strong>",
+        "<strong>20.7</strong>"
+      ],
+      [
+        "Intereses",
+        "3.9",
+        "4.4"
+      ],
+      [
+        "Inversión ^dag",
+        "1.4",
+        "1.3"
+      ],
+      [
+        "Gastos de personal*",
+        "2.6",
+        "2.7"
+      ],
+      [
+        "SGP",
+        "3.3",
+        "4.0"
+      ],
+      [
+        "Pensiones<sup>1</sup>",
+        "3.6",
+        "3.6"
+      ],
+      [
+        "Salud<sup>2</sup>",
+        "2.2",
+        "2.4"
+      ],
+      [
+        "FEPC",
+        "1.7",
+        "1.2"
+      ],
+      [
+        "SENA, ICBF y otros <sup>3</sup>",
+        "0.3",
+        "0.3"
+      ],
+      [
+        "Universidades",
+        "0.3",
+        "0.4"
+      ],
+      [
+        "Subsidios Servicios Públicos",
+        "0.3",
+        "0.2"
+      ],
+      [
+        "Cesantías y Salud FOMAG",
+        "0.1",
+        "0.1"
+      ],
+      [
+        "Deudas Entidades",
+        "0.3",
+        "0.1"
+      ],
+      [
+        "Sentencias",
+        "0.1",
+        "0.1"
+      ],
+      [
+        "<strong>Gastos semiflexibles</strong>",
+        "<strong>2.8</strong>",
+        "<strong>2.5</strong>"
+      ],
+      [
+        "Inversión",
+        "1.2",
+        "0.7"
+      ],
+      [
+        "Adq. Bienes y Servicios",
+        "0.7",
+        "0.7"
+      ],
+      [
+        "Resto de transferencias",
+        "0.9",
+        "1.2"
+      ],
+      [
+        "FOME y FNG",
+        "0.0",
+        "0.0"
+      ]
+    ],
+    "notes": "$\\dag$ Para 2024 se asume el mismo monto de inflexibilidades en la inversión que el estimado por CARF (2024) * Incluye reclasificación por contribuciones a la nómina <sup>1</sup> Incluye bonos pensionales <sup>2</sup> Incluye 4.4 de los 9 puntos del antiguo CREE <sup>3</sup> Corresponde a 4.6 de los 9 puntos del antiguo CREE",
+    "source": "Elaboración propia con base en CARF (2024)"
   },
   {
     "id": "table-5-1",
@@ -743,7 +1037,7 @@
       ]
     ],
     "notes": "<em>Incluye 4,4 de los 9 puntos porcentuales del impuesto a la renta del antiguo CREE </em>*Corresponde a 3,6 de los 9 puntos porcentuales del impuesto a la renta del antiguo CREE",
-    "source": "Elaboración propia con base en (Público, 2025)"
+    "source": "Elaboración propia con base en (Ministerio de Hacienda y Crédito Público, 2025)"
   },
   {
     "id": "table-5-2",
@@ -1003,10 +1297,30 @@
     "label": "tab:bentrib",
     "sourceFile": "Tablas/Cap06/bentrib.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "<strong>Impuesto</strong>",
+      "<strong>% PIB</strong>"
+    ],
+    "rows": [
+      [
+        "Renta Personas Jurídicas",
+        "1,9"
+      ],
+      [
+        "Renta Personas Naturales",
+        "1,6"
+      ],
+      [
+        "IVA",
+        "5,3"
+      ],
+      [
+        "<strong>Total</strong>",
+        "<strong>8,8</strong>"
+      ]
+    ],
+    "notes": "",
+    "source": "MFMP 2024, Ministerio de Hacienda"
   },
   {
     "id": "table-6-3",
@@ -1016,10 +1330,70 @@
     "label": "tab:topact",
     "sourceFile": "Tablas/Cap06/topact.tex",
     "pdfPage": null,
-    "headers": [],
-    "rows": [],
-    "notes": "Conversión pendiente: estructura LaTeX no reconocida.",
-    "source": ""
+    "headers": [
+      "<em>*</em>*",
+      "<strong>Actividad económica</strong>",
+      "<strong>Gasto tributario</strong> (% PIB)"
+    ],
+    "rows": [
+      [
+        "1",
+        "Transmisión de energía eléctrica",
+        "0,13%"
+      ],
+      [
+        "2",
+        "Actividades de planes de seguridad social obligatoria",
+        "0.11%"
+      ],
+      [
+        "3",
+        "Otras actividades del mercado de valores",
+        "0,11%"
+      ],
+      [
+        "4",
+        "Banco central y Bancos comerciales",
+        "0,09%"
+      ],
+      [
+        "5",
+        "Distribución de energía eléctrica",
+        "0,07%"
+      ],
+      [
+        "6",
+        "Extracción de petróleo crudo",
+        "0,06%"
+      ],
+      [
+        "7",
+        "Actividades de administración empresarial",
+        "0,06%"
+      ],
+      [
+        "8",
+        "Seguros de vida",
+        "0,05%"
+      ],
+      [
+        "9",
+        "Producción de malta y cervezas",
+        "0,03%"
+      ],
+      [
+        "10",
+        "Otras actividades de servicio financiero",
+        "0,03%"
+      ],
+      [
+        "<em>*</em>*",
+        "<strong>Total</strong>",
+        "<strong>0,74%</strong>"
+      ]
+    ],
+    "notes": "",
+    "source": "Elaboración propia con base en (Pardo, 2024)"
   },
   {
     "id": "table-6-4",
@@ -1030,28 +1404,17 @@
     "sourceFile": "Tablas/Cap06/aportes_colombia.tex",
     "pdfPage": null,
     "headers": [
-      "<strong>Aportes textbackslash IBC</strong>",
-      "<strong>1 SMLMV</strong>",
-      "<strong>2 SMLMV</strong>",
-      "<strong>4 SMLMV</strong>",
-      "<strong>10 SMLMV</strong>",
-      "",
-      "",
-      "",
-      ""
+      "Aportes / IBC",
+      "1 SMLMV — dependiente",
+      "1 SMLMV — independiente",
+      "2 SMLMV — dependiente",
+      "2 SMLMV — independiente",
+      "4 SMLMV — dependiente",
+      "4 SMLMV — independiente",
+      "10 SMLMV — dependiente",
+      "10 SMLMV — independiente"
     ],
     "rows": [
-      [
-        "",
-        "<strong>Dep.</strong>",
-        "<strong>Ind.</strong>",
-        "<strong>Dep.</strong>",
-        "<strong>Ind.</strong>",
-        "<strong>Dep.</strong>",
-        "<strong>Ind.</strong>",
-        "<strong>Dep.</strong>",
-        "<strong>Ind.</strong>"
-      ],
       [
         "Salud (Empresa)",
         "0,0",
@@ -1201,7 +1564,7 @@
       ]
     ],
     "notes": "<em>Elaboración propia con base en estadísticas de la DIAN del año gravable 2023</em>",
-    "source": ""
+    "source": "Elaboración propia con base en estadísticas de la DIAN del año gravable 2023"
   },
   {
     "id": "table-6-6",

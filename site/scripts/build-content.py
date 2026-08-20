@@ -104,6 +104,59 @@ EXCLUDED = [
 ]
 
 
+# Editorial metadata reconciled against the definitive print PDF. These
+# overrides are deliberately kept in the web build instead of changing the
+# original LaTeX sources.
+SOURCE_OVERRIDES = {
+    "fig-1-2": "Ministerio de Hacienda y Crédito Público (2025a)",
+    "fig-1-3": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)",
+    "fig-1-4": "Ministerio de Hacienda y Crédito Público (2025a)",
+    "fig-1-6": "Ministerio de Hacienda y Crédito Público (2025a)",
+    "fig-2-1": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)",
+    "fig-3-2": "Elaboración propia con base en datos de la Dirección de Crédito Público, Ministerio de Hacienda",
+    "fig-7-1": "Elaboración propia",
+    "table-2-1": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)",
+    "table-2-2": "Elaboración propia con base en Ministerio de Hacienda y Crédito Público (2025a)",
+    "table-6-5": "Elaboración propia con base en estadísticas de la DIAN del año gravable 2023",
+}
+
+
+FIGURE_ALT_OVERRIDES = {
+    "fig-1-1": "Serie anual del índice del PIB real de Colombia entre 2019 y 2024, con 2019 igual a uno.",
+    "fig-1-2": "Series anuales del gasto total y del gasto primario del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "fig-1-3": "Series anuales de los ingresos totales y tributarios del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "fig-1-4": "Series anuales del balance total y del balance primario del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "fig-1-5": "Serie anual de la deuda neta del Gobierno Nacional Central como porcentaje del PIB entre 2000 y 2024, junto con el ancla y el límite de la regla fiscal.",
+    "fig-1-6": "Serie anual del pago de intereses del Gobierno Nacional Central como porcentaje del PIB entre 2011 y 2024.",
+    "fig-2-1": "Comparación anual del balance del Gobierno Nacional Central observado y ajustado por la causación del FEPC entre 2019 y 2024.",
+    "fig-2-2": "Series anuales de vigencias futuras y de inversión pública como porcentaje del PIB entre 2019 y 2025.",
+    "fig-3-1": "Serie anual de las reservas presupuestales o compromisos sin obligar como porcentaje del PIB entre 2019 y 2024.",
+    "fig-3-2": "Depósitos mensuales del Tesoro Nacional en 2024 comparados con el mínimo de 2019 a 2023, en miles de millones de pesos constantes de 2019.",
+    "fig-4-1": "Proyecciones de la deuda neta del Gobierno Nacional Central como porcentaje del PIB entre 2019 y 2035 bajo distintos escenarios fiscales.",
+    "fig-4-2": "Proyecciones del balance primario del Gobierno Nacional Central como porcentaje del PIB entre 2019 y 2035 bajo distintos escenarios fiscales.",
+    "fig-5-1": "Proyección de las vigencias futuras para inversión como porcentaje del PIB entre 2025 y 2030.",
+    "fig-5-2": "Proyección de las transferencias para pensiones y asignaciones de retiro como porcentaje del PIB entre 2024 y 2035, desagregada por destino.",
+    "fig-5-3": "Proyección de las transferencias del Gobierno Nacional Central a la Adres como porcentaje del PIB entre 2024 y 2035 bajo dos escenarios de la UPC.",
+    "fig-5-4": "Proyecciones del Sistema General de Participaciones como porcentaje del PIB entre 2024 y 2038 bajo el MFMP y el acto legislativo.",
+    "fig-6-1": "Serie anual del recaudo del impuesto sobre la renta como porcentaje del PIB entre 2012 y 2024, incluido el CREE entre 2013 y 2016.",
+    "fig-6-2": "Serie anual de la tarifa nominal del impuesto sobre la renta de personas jurídicas entre 2012 y 2024.",
+    "fig-6-3": "Serie anual del recaudo del IVA como porcentaje del PIB entre 2012 y 2024, acompañada por su promedio del período.",
+    "fig-6-4": "Valor anual de las mercancías de contrabando como porcentaje del PIB entre 2018 y 2023, acompañado por su promedio del período.",
+    "fig-7-1": "Diagrama de seis pasos para la propuesta de validación, presentación y aprobación del Presupuesto General de la Nación.",
+}
+
+
+# A few PDF pages leave less white space between prose and the plot. These
+# small, resolution-specific trims remove only that preceding prose after the
+# general content-boundary detector has run.
+FIGURE_TOP_TRIMS_PX = {
+    "fig-2-2": 78,
+    "fig-3-1": 28,
+    "fig-5-1": 28,
+    "fig-7-1": 28,
+}
+
+
 def strip_comments(text: str) -> str:
     text = re.sub(r"\\begin\{comment\}.*?\\end\{comment\}", "", text, flags=re.S)
     cleaned = []
@@ -166,6 +219,7 @@ def replace_command(text: str, command: str, fn) -> str:
 
 
 def latex_text(value: str) -> str:
+    value = value.replace(r"\textbackslash{}", "/").replace(r"\dagger", "†")
     replacements = {
         r"\'a": "á", r"\'e": "é", r"\'i": "í", r"\'\i": "í", r"\'{i}": "í", r"\'o": "ó", r"\'u": "ú",
         r"\'A": "Á", r"\'E": "É", r"\'I": "Í", r"\'O": "Ó", r"\'U": "Ú", r"\~n": "ñ", r"\~{n}": "ñ",
@@ -176,6 +230,7 @@ def latex_text(value: str) -> str:
         value = value.replace(old, new)
     for command in ("textbf", "textit", "emph", "texttt", "mbox", "mathrm", "footnotesize", "small", "Large"):
         value = replace_command(value, command, lambda x: x)
+    value = replace_command(value, "textsuperscript", lambda x: f"^{x}")
     value = re.sub(r"\\(noindent|centering|raggedright|raggedleft|newpage|clearpage|pagebreak|linebreak|smallskip|medskip|bigskip)\b", "", value)
     value = re.sub(r"\\vspace\*?\{[^{}]*\}", "", value)
     value = re.sub(r"\\hspace\*?\{[^{}]*\}", "", value)
@@ -187,6 +242,9 @@ def latex_text(value: str) -> str:
 
 def markdown_inline_html(value: str) -> str:
     value = value.replace(r"\%", "%").replace(r"\$", "$")
+    value = re.sub(r"\$\^\{?(\d+)\}?\$", r"<sup>\1</sup>", value)
+    value = value.replace("$†$", "<sup>†</sup>")
+    value = re.sub(r"\^(\d+)", r"<sup>\1</sup>", value)
     value = re.sub(r"\*\*\*(.+?)\*\*\*", r"<strong><em>\1</em></strong>", value)
     value = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", value)
     value = re.sub(r"\*(.+?)\*", r"<em>\1</em>", value)
@@ -230,7 +288,9 @@ def citation(keys: str, textual: bool = False) -> str:
     for key in keys.split(","):
         entry = BIB.get(key.strip(), {})
         author = entry.get("author", key.strip())
-        surname = author.split(" and ")[0].split(",")[0].split()[-1] if author else key.strip()
+        first_author = author.split(" and ")[0] if author else key.strip()
+        corporate_terms = ("Ministerio", "Dirección", "Departamento", "Comité", "Banco", "Gobierno", "DIAN", "CARF", "OCDE", "OECD")
+        surname = first_author if any(term in first_author for term in corporate_terms) else first_author.split(",")[0].split()[-1]
         year = entry.get("year", "s. f.")
         rendered.append(f"{surname} ({year})" if textual else f"{surname}, {year}")
     return "; ".join(rendered) if textual else "(" + "; ".join(rendered) + ")"
@@ -299,12 +359,38 @@ def extract_source_note(tex: str) -> tuple[str, str]:
     return source.rstrip("."), " ".join(notes)
 
 
+def extract_table_environment(tex: str) -> tuple[str, int] | None:
+    """Return the first active table body using balanced LaTeX arguments."""
+    candidates = []
+    for environment in ("tabularx", "tabular", "longtable"):
+        token = rf"\begin{{{environment}}}"
+        position = tex.find(token)
+        if position >= 0:
+            candidates.append((position, environment, token))
+    if not candidates:
+        return None
+    position, environment, token = min(candidates)
+    cursor = position + len(token)
+    arguments = 2 if environment == "tabularx" else 1
+    for _ in range(arguments):
+        while cursor < len(tex) and tex[cursor].isspace():
+            cursor += 1
+        if cursor >= len(tex) or tex[cursor] != "{":
+            return None
+        _, cursor = extract_braced(tex, cursor)
+    end_token = rf"\end{{{environment}}}"
+    end = tex.find(end_token, cursor)
+    if end < 0:
+        return None
+    return tex[cursor:end], end + len(end_token)
+
+
 def parse_table(row: dict) -> dict:
     tex = read_tex(ROOT / row["sourceFile"])
-    match = re.search(r"\\begin\{(?:tabularx?|longtable)\}(?:\{[^{}]*\}){1,2}(.*?)\\end\{(?:tabularx?|longtable)\}", tex, flags=re.S)
-    if not match:
+    environment = extract_table_environment(tex)
+    if not environment:
         return {"headers": [], "rows": [], "notes": "Conversión pendiente: estructura LaTeX no reconocida.", "source": ""}
-    body = match.group(1)
+    body, environment_end = environment
     body = re.sub(r"\\(?:hline|toprule|midrule|bottomrule)\b", "", body)
     body = re.sub(r"\\(?:cline|cmidrule)\{[^}]+\}", "", body)
     body = re.sub(r"\\addlinespace(?:\[[^]]*\])?", "", body)
@@ -325,8 +411,28 @@ def parse_table(row: dict) -> dict:
             parsed.append(values)
     width = max((len(r) for r in parsed), default=0)
     parsed = [r + [""] * (width - len(r)) for r in parsed]
-    source, notes = extract_source_note(tex[match.end():])
-    return {"headers": parsed[0] if parsed else [], "rows": parsed[1:] if len(parsed) > 1 else [], "notes": markdown_inline_html(notes), "source": source}
+    source, notes = extract_source_note(tex[environment_end:])
+    result = {"headers": parsed[0] if parsed else [], "rows": parsed[1:] if len(parsed) > 1 else [], "notes": markdown_inline_html(notes), "source": source}
+
+    # Table 6.4 has a two-tier printed header. Flattening it preserves the
+    # column relationships for screen readers and narrow horizontal scrolling.
+    if row["id"] == "table-6-4":
+        result["headers"] = [
+            "Aportes / IBC", "1 SMLMV — dependiente", "1 SMLMV — independiente",
+            "2 SMLMV — dependiente", "2 SMLMV — independiente",
+            "4 SMLMV — dependiente", "4 SMLMV — independiente",
+            "10 SMLMV — dependiente", "10 SMLMV — independiente",
+        ]
+        if result["rows"] and "Dep." in " ".join(result["rows"][0]):
+            result["rows"] = result["rows"][1:]
+
+    # The definitive PDF corrects the arithmetic total printed in table 6.3.
+    if row["id"] == "table-6-3" and result["rows"]:
+        result["rows"][-1][-1] = "<strong>0,74%</strong>"
+
+    if row["id"] in SOURCE_OVERRIDES:
+        result["source"] = SOURCE_OVERRIDES[row["id"]]
+    return result
 
 
 def clean_document(tex: str) -> str:
@@ -392,7 +498,9 @@ def convert_chapter(tex: str, chapter_number: int | None) -> tuple[str, list[str
             continue
         marker = re.fullmatch(r"\[\[VISUAL:([^]]+)\]\]", block)
         if marker:
-            pending.append(marker.group(1))
+            visual_id = marker.group(1)
+            if visual_id not in used and visual_id not in pending:
+                pending.append(visual_id)
             continue
         heading = section_heading(block, chapter_number, counters)
         if heading:
@@ -410,7 +518,7 @@ def convert_chapter(tex: str, chapter_number: int | None) -> tuple[str, list[str
             out.append(paragraph)
         to_insert = []
         for visual_id in references:
-            if visual_id not in used:
+            if visual_id not in used and visual_id not in to_insert:
                 to_insert.append(visual_id)
         if not to_insert and pending and paragraph:
             to_insert.append(pending[0])
@@ -426,8 +534,8 @@ def convert_chapter(tex: str, chapter_number: int | None) -> tuple[str, list[str
     return "\n\n".join(out), used
 
 
-def figure_alt(title: str) -> str:
-    return f"Gráfico publicado que presenta {title[:1].lower() + title[1:]}. Consulte el título, la nota y la fuente para interpretar sus medidas."
+def figure_alt(row: dict) -> str:
+    return FIGURE_ALT_OVERRIDES[row["id"]]
 
 
 def render_pdf_page(page: int, output: Path, dpi: int = 180) -> None:
@@ -444,6 +552,29 @@ def render_pdf_page(page: int, output: Path, dpi: int = 180) -> None:
 def pdf_caption_positions(document, page_number: int) -> list[float]:
     words = document.pages[page_number - 1].extract_words()
     return sorted([float(word["top"]) for word in words if word["text"] == "Figura"])
+
+
+def detect_figure_top(image: Image.Image, left: int, right: int, top_limit: int, bottom: int) -> int:
+    """Locate the nearest continuous graphic block above a PDF caption."""
+    gray = image.convert("L")
+    pixels = gray.load()
+    sample_step = 2
+    active_threshold = max(5, int((right - left) / sample_step * 0.0025))
+    gap_required = max(14, int(image.height * 0.006))
+    seen_content = False
+    gap = 0
+    highest_content = bottom
+    for y in range(bottom - 1, top_limit - 1, -1):
+        ink = sum(1 for x in range(left, right, sample_step) if pixels[x, y] < 238)
+        if ink >= active_threshold:
+            seen_content = True
+            gap = 0
+            highest_content = y
+        elif seen_content:
+            gap += 1
+            if gap >= gap_required:
+                return max(top_limit, highest_content - 10)
+    return top_limit
 
 
 def render_figures() -> None:
@@ -471,12 +602,22 @@ def render_figures() -> None:
                     "fig-1-1": 180, "fig-1-2": 180, "fig-1-3": 205, "fig-1-4": 205, "fig-1-5": 180, "fig-1-6": 220,
                     "fig-2-1": 190, "fig-2-2": 190, "fig-3-1": 170, "fig-3-2": 205,
                     "fig-4-1": 200, "fig-4-2": 200, "fig-5-1": 160, "fig-5-2": 195, "fig-5-3": 190, "fig-5-4": 175,
-                    "fig-6-1": 185, "fig-6-2": 185, "fig-6-3": 165, "fig-6-4": 160, "fig-7-1": 310,
+                    "fig-6-1": 185, "fig-6-2": 185, "fig-6-3": 173, "fig-6-4": 160, "fig-7-1": 310,
                 }
                 span = spans[row["id"]]
-                top = max(previous_bottom, cap - span)
-                bottom = min(float(pdf_page.height) - 35, cap + 62)
-                crop = image.crop((int(34 * scale_x), int(top * scale_y), int((float(pdf_page.width) - 34) * scale_x), int(bottom * scale_y)))
+                manual_top = max(previous_bottom, cap - span)
+                left_px = int(34 * scale_x)
+                right_px = int((float(pdf_page.width) - 34) * scale_x)
+                bottom = max(manual_top + 24, cap - 5)
+                bottom_px = int(bottom * scale_y)
+                top_px = detect_figure_top(image, left_px, right_px, int(manual_top * scale_y), bottom_px)
+                # Keep a conservative fallback for unusually sparse diagrams.
+                if bottom_px - top_px < int(70 * scale_y):
+                    top_px = int(manual_top * scale_y)
+                crop = image.crop((left_px, top_px, right_px, bottom_px))
+                trim = FIGURE_TOP_TRIMS_PX.get(row["id"], 0)
+                if trim:
+                    crop = crop.crop((0, trim, crop.width, crop.height))
                 out = OUT_FIGURES / f"{row['id']}.png"
                 crop.save(out, optimize=True)
                 row["image"] = f"/assets/figures/{out.name}"
@@ -598,6 +739,7 @@ sourceFile: "bibliografia.bib"
               "- El PDF definitivo prevalece en capitalización, numeración, títulos, créditos e identidad institucional.",
               "- `Capitulos/Capitulo03.tex` conserva un título anterior comentado; no se publicó.",
               "- Algunas fuentes contienen versiones alternativas después de comentarios; solo se procesó la primera estructura activa incluida por el capítulo.",
+              "- La tabla 6.3 totaliza 0,74 % del PIB en el PDF definitivo; el archivo `Tablas/Cap06/topact.tex` conserva 0,63 %. La versión web usa 0,74 % y no modifica el fuente editorial.",
               "- Las figuras se publican como recortes PNG de alta resolución del PDF definitivo: el entorno no dispone de una cadena TeX capaz de garantizar SVG fiel. El archivo LaTeX original queda inventariado como fuente.", ""]
     for path, reason in EXCLUDED:
         audit.append(f"- `{path}`: {reason}")
@@ -632,7 +774,8 @@ def main() -> None:
         if row["type"] == "figure":
             source_tex = read_tex(ROOT / row["sourceFile"])
             source, notes = extract_source_note(source_tex)
-            row.update({"alt": figure_alt(row["title"]), "source": source, "notes": markdown_inline_html(notes), "format": "PNG de alta resolución extraído del PDF definitivo"})
+            source = SOURCE_OVERRIDES.get(row["id"], source)
+            row.update({"alt": figure_alt(row), "source": source, "notes": markdown_inline_html(notes), "format": "PNG de alta resolución extraído del PDF definitivo"})
         else:
             row.update(parse_table(row))
     OUT_DATA.mkdir(parents=True, exist_ok=True)
