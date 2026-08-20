@@ -28,7 +28,12 @@ const structuredData = {
   "@type": "Book",
   name: book.title,
   alternateName: `${book.title}: ${book.subtitle}`,
-  author: { "@type": "Person", name: book.author },
+  author: {
+    "@type": "Person",
+    name: book.author,
+    email: 'mailto:' + book.contact.email,
+    sameAs: [book.contact.x, book.contact.linkedin],
+  },
   publisher: { "@type": "Organization", name: book.publisher },
   datePublished: book.datePublished,
   inLanguage: "es",
